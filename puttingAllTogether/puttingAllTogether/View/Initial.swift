@@ -1,52 +1,38 @@
 //
-//  MainViewController.swift
+//  Initial.swift
 //  puttingAllTogether
 //
-//  Created by Pedro Sousa on 02/06/20.
+//  Created by Pedro Sousa on 03/06/20.
 //  Copyright © 2020 Brabo. All rights reserved.
 //
 
 import UIKit
 
-class Initial: UIViewController {
+class Initial: UIView {
     
-    let btn = UIButton()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var startBtn: UIButton = UIButton()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setupLayout() {
-        view.backgroundColor = .smokyBlack
-        view.addSubview(btn)
+        self.backgroundColor = .smokyBlack
         
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        btn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        btn.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        btn.setTitle("Start", for: .normal)
-        btn.setTitleColor(.cultured, for: .normal)
-        btn.backgroundColor = .dodgerBlue
-        btn.layer.cornerRadius = 4
-        
-        btn.addTarget(self, action: #selector(start), for: .touchUpInside)
+        self.addSubview(startBtn)
+        startBtn.setTitle("Start", for: .normal)
+        startBtn.setTitleColor(.cultured, for: .normal)
+        startBtn.backgroundColor = .dodgerBlue
+        startBtn.layer.cornerRadius = 4
+        startBtn.translatesAutoresizingMaskIntoConstraints = false
+        startBtn.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        startBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        startBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        startBtn.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
-    
-    @objc private func start() {
-        let gameplay = Gameplay()
-        self.navigationController?.pushViewController(gameplay, animated: true)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

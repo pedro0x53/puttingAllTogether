@@ -12,7 +12,7 @@ class Config {
     
     func mainController() -> UIViewController {
         let nav = setupNavController()
-        let controller = Initial()
+        let controller = InitialController()
         
         nav.viewControllers = [controller]
         
