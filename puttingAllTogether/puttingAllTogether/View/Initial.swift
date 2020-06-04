@@ -12,8 +12,13 @@ class Initial: UIView {
     
     var startBtn: UIButton = UIButton()
     
+    var weatherInfo = WeatherAPI()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        weatherInfo.weatherRequestInfo()
+        
         setupLayout()
     }
     
@@ -22,6 +27,8 @@ class Initial: UIView {
     }
     
     private func setupLayout() {
+        weatherInfo.printAllInfo()
+        
         self.backgroundColor = .smokyBlack
         
         self.addSubview(startBtn)
