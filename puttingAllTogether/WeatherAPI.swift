@@ -7,14 +7,22 @@
 //
 
 import Foundation
+import CoreLocation
 
 public class WeatherAPI {
     var info : WeatherData?
     
-    var locationCoordinates = (latitude: -3.72, longitude: -38.52)
+    var locationCoordinates = (latitude : 0.0, longitude : 0.0)
     let APIKey = "9402f537f757e5a96e51fef8c3c29882"
     var weatherURLString = ""
    
+    //MARK: - Update User Location
+    
+    func setLocation(latitude lat : Double, longitude lon : Double) {
+        locationCoordinates.latitude = lat
+        locationCoordinates.longitude = lon
+    }
+    
     //MARK: - OpenWeatherMap API Request
     
     private func createURLString() {
