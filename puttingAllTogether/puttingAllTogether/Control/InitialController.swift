@@ -96,7 +96,7 @@ extension InitialController : CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("SHIT")
+        print("Error in getting location: Location Services probably disabled")
     }
     
 }
