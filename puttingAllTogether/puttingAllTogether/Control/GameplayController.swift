@@ -17,7 +17,7 @@ public enum SwipeDirection {
 
 class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     
-    var gameplay = Gameplay()
+    var gameplay = Gameplay.shared
     
     private let pinchGesture      = UIPinchGestureRecognizer()
     private let swipeUpGesture    = UISwipeGestureRecognizer()
@@ -32,11 +32,14 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestures()
-        self.activateSwipes(swipes: .up, .right, .down, .left)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         play()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        deactivateSwipes(swipes: .up, .right, .down, .left)
     }
     
     private func setupGestures() {
@@ -63,9 +66,9 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc private func pinch(_ pinch: UIPinchGestureRecognizer) {
         if(pinch.scale > 1) {
-            print("Pinch out gesture rocognized!")
+            print("Code to show the menu goes here...")
         } else {
-            print("Pinch in gesture rocognized!")
+            print("(Maybe) Code to hide the menu goes here...")
         }
     }
     
@@ -90,12 +93,36 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
             switch swipe {
             case .up:
                 gameplay.addGestureRecognizer(swipeUpGesture)
+                gameplay.topView.isHidden = false
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.topView.alpha = 0.9
+                }, completion: { (completion) in
+                    self.gameplay.topView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
+                })
             case .right:
                 gameplay.addGestureRecognizer(swipeRightGesture)
+                gameplay.rightView.isHidden = false
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.rightView.alpha = 0.9
+                }, completion: { (completion) in
+                    self.gameplay.rightView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
+                })
             case .down:
                 gameplay.addGestureRecognizer(swipeDownGesture)
+                gameplay.bottomView.isHidden = false
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.bottomView.alpha = 0.9
+                }, completion: { (completion) in
+                    self.gameplay.bottomView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
+                })
             case .left:
                 gameplay.addGestureRecognizer(swipeLeftGesture)
+                gameplay.leftView.isHidden = false
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.leftView.alpha = 0.9
+                }, completion: { (completion) in
+                    self.gameplay.leftView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
+                })
             }
         }
     }
@@ -105,12 +132,32 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
             switch swipe {
             case .up:
                 gameplay.removeGestureRecognizer(swipeUpGesture)
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.topView.alpha = 0
+                }, completion: { (completion) in
+                    self.gameplay.topView.isHidden = true
+                })
             case .right:
                 gameplay.removeGestureRecognizer(swipeRightGesture)
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.rightView.alpha = 0
+                }, completion: { (completion) in
+                    self.gameplay.rightView.isHidden = true
+                })
             case .down:
                 gameplay.removeGestureRecognizer(swipeDownGesture)
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.bottomView.alpha = 0
+                }, completion: { (completion) in
+                    self.gameplay.bottomView.isHidden = true
+                })
             case .left:
                 gameplay.removeGestureRecognizer(swipeLeftGesture)
+                UIView.animate(withDuration: 1.5, animations: {
+                    self.gameplay.leftView.alpha = 0
+                }, completion: { (completion) in
+                    self.gameplay.leftView.isHidden = true
+                })
             }
         }
     }
@@ -119,5 +166,6 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
 extension GameplayController {
     private func play() {
         print("Gameplay logic goes here...")
+//        self.activateSwipes(swipes: .up, .right, .down, .left)
     }
 }
