@@ -11,6 +11,7 @@ import UIKit
 class Initial: UIView {
     
     var startBtn: UIButton = UIButton()
+    var backImg : UIImageView = UIImageView(image: UIImage(named: "backImg"))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +23,9 @@ class Initial: UIView {
     }
     
     private func setupLayout() {
-        self.backgroundColor = .smokyBlack
+        self.addSubview(backImg)
+        backImg.contentMode = UIView.ContentMode.center
+        backImg.frame.size.width = UIScreen.main.bounds.width
         
         self.addSubview(startBtn)
         startBtn.setTitle("Start", for: .normal)

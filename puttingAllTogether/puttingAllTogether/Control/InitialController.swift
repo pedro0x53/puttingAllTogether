@@ -18,7 +18,16 @@ class InitialController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupActions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     private func setupActions() {
