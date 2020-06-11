@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0A2DEE24926480002307BE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DED24926480002307BE /* Preferences.swift */; };
+		6E0A2DF0249264A8002307BE /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DEF249264A8002307BE /* PreferencesController.swift */; };
 		924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85172489136000E2CB1E /* WeatherAPI.swift */; };
 		924C851A2489138700E2CB1E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85192489138700E2CB1E /* WeatherData.swift */; };
 		FE5552E62487D5690096BF0A /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5552E52487D5690096BF0A /* Initial.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0A2DED24926480002307BE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		6E0A2DEF249264A8002307BE /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		924C85172489136000E2CB1E /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = SOURCE_ROOT; };
 		924C85192489138700E2CB1E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = SOURCE_ROOT; };
 		FE5552E52487D5690096BF0A /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				FE5552E52487D5690096BF0A /* Initial.swift */,
 				FE5E914D2487D3F3001FCE8A /* Gameplay.swift */,
+				6E0A2DED24926480002307BE /* Preferences.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				FEE853DF248690760063B3F6 /* InitialController.swift */,
 				FE6CD73524869FC30064CAEC /* GameplayController.swift */,
+				6E0A2DEF249264A8002307BE /* PreferencesController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			files = (
 				FEE853E7248692BA0063B3F6 /* Colors.swift in Sources */,
 				FE5E914E2487D3F3001FCE8A /* Gameplay.swift in Sources */,
+				6E0A2DEE24926480002307BE /* Preferences.swift in Sources */,
 				FEE853B024868F260063B3F6 /* puttingAllTogether.xcdatamodeld in Sources */,
 				FEE853DD24868FAA0063B3F6 /* Config.swift in Sources */,
 				FEE853E0248690760063B3F6 /* InitialController.swift in Sources */,
@@ -345,6 +352,7 @@
 				FE6CD73624869FC30064CAEC /* GameplayController.swift in Sources */,
 				924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */,
 				FEE853A624868F260063B3F6 /* AppDelegate.swift in Sources */,
+				6E0A2DF0249264A8002307BE /* PreferencesController.swift in Sources */,
 				FEE853A824868F260063B3F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
