@@ -30,6 +30,7 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func loadView() {
+        super.loadView()
         view = gameplay
     }
     
@@ -44,10 +45,12 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         play()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         deactivateSwipes(swipes: .up, .right, .down, .left)
     }
     

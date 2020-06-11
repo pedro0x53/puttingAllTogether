@@ -13,7 +13,8 @@ class PreferencesController: UIViewController {
     var preferences = Preferences()
     
     override func loadView() {
-       view = preferences
+        super.loadView()
+        view = preferences
     }
     
     override func viewDidLoad() {
@@ -25,9 +26,11 @@ class PreferencesController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
