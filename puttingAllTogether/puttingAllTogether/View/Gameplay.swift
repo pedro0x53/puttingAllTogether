@@ -133,10 +133,9 @@ class Gameplay: UIView {
         pauseBtn.widthAnchor.constraint(equalToConstant: 50).isActive = true
         pauseBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
         pauseBtn.topAnchor.constraint(
-        equalTo: self.topAnchor, constant: 16).isActive = true
+        equalTo: self.topAnchor, constant: 50).isActive = true
         pauseBtn.rightAnchor.constraint(
             equalTo: self.rightAnchor, constant: -16).isActive = true
-        pauseBtn.alpha = 0.5
         pauseBtn.addTarget(self, action: #selector(callMenu), for: .touchUpInside)
     }
     
