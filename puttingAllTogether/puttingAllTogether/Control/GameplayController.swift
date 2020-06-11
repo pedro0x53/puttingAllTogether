@@ -25,8 +25,17 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
     private let swipeDownGesture  = UISwipeGestureRecognizer()
     private let swipeLeftGesture  = UISwipeGestureRecognizer()
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func loadView() {
         view = gameplay
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {
@@ -166,6 +175,6 @@ class GameplayController: UIViewController, UIGestureRecognizerDelegate {
 extension GameplayController {
     private func play() {
         print("Gameplay logic goes here...")
-//        self.activateSwipes(swipes: .up, .right, .down, .left)
+        self.activateSwipes(swipes: .up, .right, .down, .left)
     }
 }
