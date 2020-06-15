@@ -11,6 +11,8 @@
 		6E0A2DF0249264A8002307BE /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DEF249264A8002307BE /* PreferencesController.swift */; };
 		924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85172489136000E2CB1E /* WeatherAPI.swift */; };
 		924C851A2489138700E2CB1E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85192489138700E2CB1E /* WeatherData.swift */; };
+		FE2A643524979FFA0034637F /* ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A643424979FFA0034637F /* ManagerDelegate.swift */; };
+		FE2A64372497A1850034637F /* GesturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A64362497A1850034637F /* GesturesManager.swift */; };
 		FE5552E62487D5690096BF0A /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5552E52487D5690096BF0A /* Initial.swift */; };
 		FE5E914E2487D3F3001FCE8A /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E914D2487D3F3001FCE8A /* Gameplay.swift */; };
 		FE6CD73624869FC30064CAEC /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CD73524869FC30064CAEC /* GameplayController.swift */; };
@@ -48,6 +50,8 @@
 		6E0A2DEF249264A8002307BE /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		924C85172489136000E2CB1E /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = SOURCE_ROOT; };
 		924C85192489138700E2CB1E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = SOURCE_ROOT; };
+		FE2A643424979FFA0034637F /* ManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerDelegate.swift; sourceTree = "<group>"; };
+		FE2A64362497A1850034637F /* GesturesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesManager.swift; sourceTree = "<group>"; };
 		FE5552E52487D5690096BF0A /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
 		FE5E914D2487D3F3001FCE8A /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		FE6CD73524869FC30064CAEC /* GameplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE2A643324979FD80034637F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FE2A64362497A1850034637F /* GesturesManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		FEE8539924868F260063B3F6 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +192,7 @@
 		FEE853DB24868F800063B3F6 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				FE2A643324979FD80034637F /* Managers */,
 				FEE853DF248690760063B3F6 /* InitialController.swift */,
 				FE6CD73524869FC30064CAEC /* GameplayController.swift */,
 				6E0A2DEF249264A8002307BE /* PreferencesController.swift */,
@@ -207,6 +220,7 @@
 		FEE853E3248690980063B3F6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FE2A643424979FFA0034637F /* ManagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -346,9 +360,11 @@
 				6E0A2DEE24926480002307BE /* Preferences.swift in Sources */,
 				FEE853B024868F260063B3F6 /* puttingAllTogether.xcdatamodeld in Sources */,
 				FEE853DD24868FAA0063B3F6 /* Config.swift in Sources */,
+				FE2A64372497A1850034637F /* GesturesManager.swift in Sources */,
 				FEE853E0248690760063B3F6 /* InitialController.swift in Sources */,
 				924C851A2489138700E2CB1E /* WeatherData.swift in Sources */,
 				FE5552E62487D5690096BF0A /* Initial.swift in Sources */,
+				FE2A643524979FFA0034637F /* ManagerDelegate.swift in Sources */,
 				FE6CD73624869FC30064CAEC /* GameplayController.swift in Sources */,
 				924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */,
 				FEE853A624868F260063B3F6 /* AppDelegate.swift in Sources */,
