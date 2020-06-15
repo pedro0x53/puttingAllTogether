@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-protocol ManagerDelegate: UIGestureRecognizerDelegate {
+protocol ManagerDelegate: UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
     func playerDidFinished()
     func gestureRecognized()
 }
