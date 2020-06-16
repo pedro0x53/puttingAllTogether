@@ -11,14 +11,27 @@ import CoreLocation
 
 class InitialController: UIViewController {
     
-    var initial = Initial()
+    let initial = Initial()
     
     let locationManager = CLLocationManager()
     let weatherData = WeatherAPI()
     
+    private let menu = [
+        MenuItem(icon: "play_icon", label: "Play"),
+        MenuItem(icon: "settings_icon", label: "Preferências"),
+        MenuItem(icon: "copyright_icon", label: "Créditos"),
+        MenuItem(icon: "exit_icon", label: "Sair")
+    ]
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func loadView() {
         super.loadView()
         view = initial
+        initial.menu.delegate = self
+        initial.menu.dataSource = self
     }
     
     override func viewDidLoad() {
@@ -29,8 +42,6 @@ class InitialController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways){
             locationManager.requestLocation()
         }
-      
-        setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,18 +54,22 @@ class InitialController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    private func setupActions() {
-        self.initial.startBtn.addTarget(
-            self,
-            action: #selector(start),
-            for: .touchUpInside)
+}
+
+extension InitialController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
-    
-    @objc private func start() {
-        let gameplayController = GameplayController()
-        self.navigationController?.pushViewController(gameplayController, animated: true)
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.menu.count
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.identifier, for: indexPath) as! MenuCell
+        cell.configure(data: self.menu[indexPath.row])
+        return cell
+    }
 }
 
 extension InitialController : CLLocationManagerDelegate {

@@ -10,12 +10,11 @@ import UIKit
 
 class Initial: UIView {
     
-    var startBtn: UIButton = UIButton()
-    var backImg : UIImageView = UIImageView(image: UIImage(named: "backImg"))
+    let bkg: UIImageView = UIImageView(image: UIImage(named: "bkg"))
+    let menu: Menu = Menu()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupLayout()
     }
     
@@ -24,19 +23,19 @@ class Initial: UIView {
     }
     
     private func setupLayout() {
-        self.addSubview(backImg)
-        backImg.contentMode = UIView.ContentMode.center
-        backImg.frame.size.width = UIScreen.main.bounds.width
+        self.addSubview(bkg)
+        bkg.contentMode = UIView.ContentMode.center
+        bkg.frame.size.width = UIScreen.main.bounds.width
         
-        self.addSubview(startBtn)
-        startBtn.setTitle("Start", for: .normal)
-        startBtn.setTitleColor(.cultured, for: .normal)
-        startBtn.backgroundColor = .dodgerBlue
-        startBtn.layer.cornerRadius = 4
-        startBtn.translatesAutoresizingMaskIntoConstraints = false
-        startBtn.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        startBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        startBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        startBtn.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = bkg.bounds
+        self.addSubview(blurredEffectView)
+        
+        self.addSubview(menu)
+        menu.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        menu.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        menu.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        menu.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }
