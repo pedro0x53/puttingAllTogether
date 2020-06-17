@@ -17,10 +17,12 @@ class InitialController: UIViewController {
     let weatherData = WeatherAPI()
     
     private let menu = [
-        MenuItem(icon: "play_icon", label: "Play"),
-        MenuItem(icon: "settings_icon", label: "Preferências"),
-        MenuItem(icon: "copyright_icon", label: "Créditos"),
-        MenuItem(icon: "exit_icon", label: "Sair")
+        MenuItem(icon: "play_icon", label: "Play",
+                 action: .push, ref: GameplayController()),
+        MenuItem(icon: "settings_icon", label: "Preferências",
+                 action: .push, ref: PreferencesController()),
+        MenuItem(icon: "exit_icon", label: "Sair",
+                 action: .exit)
     ]
     
     override var prefersStatusBarHidden: Bool {
@@ -48,12 +50,6 @@ class InitialController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
 }
 
 extension InitialController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -67,8 +63,29 @@ extension InitialController: UICollectionViewDelegate, UICollectionViewDataSourc
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.identifier, for: indexPath) as! MenuCell
+        
         cell.configure(data: self.menu[indexPath.row])
+        cell.delegate = self
+        cell.index = indexPath.row
+        
         return cell
+    }
+}
+
+extension InitialController: MenuDelegate {
+    func presentCurrent(index: Int?) {
+        if let id = index {
+            let action = self.menu[id].action
+            switch action {
+            case .push:
+                if let controller = self.menu[id].ref {
+                    controller.modalPresentationStyle = .overFullScreen
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+            case .exit:
+                print("exit")
+            }
+        }
     }
 }
 

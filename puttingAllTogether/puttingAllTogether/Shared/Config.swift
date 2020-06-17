@@ -25,7 +25,13 @@ class Config {
         nav.navigationBar.tintColor = .cultured
         nav.navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 21, weight: .bold)]
         nav.navigationBar.shadowImage = UIImage()
-        nav.navigationBar.isTranslucent = false
+        nav.navigationBar.isTranslucent = true
+        nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = nav.navigationBar.bounds
+        nav.navigationBar.addSubview(blurredEffectView)
         
         return nav
     }

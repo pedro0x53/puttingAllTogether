@@ -10,6 +10,8 @@ import UIKit
 
 class Preferences: UIView {
     //still needed to set the current values of each slider
+    let bkg: UIImageView = UIImageView(image: UIImage(named: "bkg"))
+    
     let volumesLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Volumes"
@@ -26,6 +28,7 @@ class Preferences: UIView {
     }()
     let generalVolumeSlider: UISlider = {
         let slider = UISlider()
+        slider.tintColor = .dodgerBlue
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.heightAnchor.constraint(equalToConstant: 22).isActive = true
@@ -44,6 +47,7 @@ class Preferences: UIView {
     }()
     let dubbingVolumeSlider: UISlider = {
        let slider = UISlider()
+        slider.tintColor = .dodgerBlue
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.heightAnchor.constraint(equalToConstant: 22).isActive = true
@@ -62,6 +66,7 @@ class Preferences: UIView {
     }()
     let effectsVolumeSlider: UISlider = {
        let slider = UISlider()
+        slider.tintColor = .dodgerBlue
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.heightAnchor.constraint(equalToConstant: 22).isActive = true
@@ -87,7 +92,7 @@ class Preferences: UIView {
     }()
     let talkbackSwitch: UISwitch = {
         let swt = UISwitch()
-        swt.onTintColor = .systemBlue
+        swt.onTintColor = .dodgerBlue
         return swt
         }()
     
@@ -100,16 +105,31 @@ class Preferences: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func setupLayout() {
-        addToView(view: volumesLabel, topAnchor: self.topAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 49, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
-        addToView(view: generalLabel, topAnchor: volumesLabel.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 16, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
-        addToView(view: generalVolumeSlider, topAnchor: generalLabel.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 16, rightSpacing: -16, downSpacing: 0)
-        addToView(view: dubbingLabel, topAnchor: generalVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 30, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
-        addToView(view: dubbingVolumeSlider, topAnchor: dubbingLabel.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 16, rightSpacing: -16, downSpacing: 0)
-        addToView(view: effectsLabel, topAnchor: dubbingVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 30, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
-        addToView(view: effectsVolumeSlider, topAnchor: effectsLabel.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 16, rightSpacing: -16, downSpacing: 0)
-        addToView(view: talkbackLabel, topAnchor: effectsVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 50, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
-        addToView(view: talkbackDescriptionLabel, topAnchor: talkbackLabel.bottomAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 7, leftSpacing: 16, rightSpacing: 0, downSpacing: 0)
+        self.addSubview(bkg)
+        bkg.clipsToBounds = true
+        bkg.contentMode = UIView.ContentMode.center
+        bkg.frame.size.width = UIScreen.main.bounds.width
+        
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = bkg.bounds
+        self.addSubview(blurredEffectView)
+        
+        addToView(view: volumesLabel, topAnchor: self.safeAreaLayoutGuide.topAnchor, botAnchor: nil, leftAnchor: self.leftAnchor, rightAnchor: nil, topSpacing: 16, leftSpacing: 20, rightSpacing: 0, downSpacing: 0)
+        
+        addToView(view: generalLabel, topAnchor: volumesLabel.bottomAnchor, botAnchor: nil, leftAnchor: volumesLabel.leftAnchor, rightAnchor: nil, topSpacing: 16, leftSpacing: 0, rightSpacing: 0, downSpacing: 0)
+        addToView(view: generalVolumeSlider, topAnchor: generalLabel.bottomAnchor, botAnchor: nil, leftAnchor: generalLabel.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 0, rightSpacing: -20, downSpacing: 0)
+        
+        addToView(view: dubbingLabel, topAnchor: generalVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: volumesLabel.leftAnchor, rightAnchor: nil, topSpacing: 30, leftSpacing: 0, rightSpacing: 0, downSpacing: 0)
+        addToView(view: dubbingVolumeSlider, topAnchor: dubbingLabel.bottomAnchor, botAnchor: nil, leftAnchor: dubbingLabel.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 0, rightSpacing: -16, downSpacing: 0)
+        
+        addToView(view: effectsLabel, topAnchor: dubbingVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: volumesLabel.leftAnchor, rightAnchor: nil, topSpacing: 30, leftSpacing: 0, rightSpacing: 0, downSpacing: 0)
+        addToView(view: effectsVolumeSlider, topAnchor: effectsLabel.bottomAnchor, botAnchor: nil, leftAnchor: effectsLabel.leftAnchor, rightAnchor: self.rightAnchor, topSpacing: 15, leftSpacing: 0, rightSpacing: -16, downSpacing: 0)
+        
+        addToView(view: talkbackLabel, topAnchor: effectsVolumeSlider.bottomAnchor, botAnchor: nil, leftAnchor: volumesLabel.leftAnchor, rightAnchor: nil, topSpacing: 50, leftSpacing: 0, rightSpacing: 0, downSpacing: 0)
+        addToView(view: talkbackDescriptionLabel, topAnchor: talkbackLabel.bottomAnchor, botAnchor: nil, leftAnchor: volumesLabel.leftAnchor, rightAnchor: nil, topSpacing: 7, leftSpacing: 0, rightSpacing: 0, downSpacing: 0)
         addToView(view: talkbackSwitch, topAnchor: nil, botAnchor: nil, leftAnchor: nil, rightAnchor: self.rightAnchor, topSpacing: 0, leftSpacing: 0, rightSpacing: -16, downSpacing: 0)
+        
         talkbackSwitch.centerYAnchor.constraint(equalTo: talkbackDescriptionLabel.centerYAnchor).isActive = true
     }
     //adds an UIView to self and sets its constraints
