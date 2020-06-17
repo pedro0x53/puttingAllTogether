@@ -19,6 +19,9 @@ class Gameplay: UIView {
     
     public static let shared = Gameplay()
     
+    let menu: Menu = Menu()
+    let overlay: UIView = UIView()
+    
     let pauseBtn: UIButton = UIButton()
     
     var topView: UIView = UIView()
@@ -136,7 +139,30 @@ class Gameplay: UIView {
         equalTo: self.topAnchor, constant: 25).isActive = true
         pauseBtn.rightAnchor.constraint(
             equalTo: self.rightAnchor, constant: -25).isActive = true
-        pauseBtn.addTarget(self, action: #selector(callMenu), for: .touchUpInside)
+        
+         
+        self.addSubview(overlay)
+        overlay.isHidden = true
+        overlay.alpha = 0
+        overlay.backgroundColor = .clear
+        overlay.frame = self.bounds
+        overlay.translatesAutoresizingMaskIntoConstraints = false
+        overlay.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        overlay.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        overlay.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        overlay.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        
+        let blur = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurEffect = UIVisualEffectView(effect: blur)
+        blurEffect.frame = overlay.bounds
+        overlay.addSubview(blurEffect)
+        
+        overlay.addSubview(menu)
+        menu.translatesAutoresizingMaskIntoConstraints = false
+        menu.leadingAnchor.constraint(equalTo: overlay.leadingAnchor).isActive = true
+        menu.trailingAnchor.constraint(equalTo: overlay.trailingAnchor).isActive = true
+        menu.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        menu.centerYAnchor.constraint(equalTo: overlay.centerYAnchor).isActive = true
     }
     
     private func generateLinearGradient(frame: CGRect, direction: GratientDirection) -> CAGradientLayer {
@@ -158,9 +184,5 @@ class Gameplay: UIView {
         gradient.frame = frame
         
         return gradient
-    }
-    
-    @objc func callMenu() {
-        print("Code to show menu goes here...")
     }
 }

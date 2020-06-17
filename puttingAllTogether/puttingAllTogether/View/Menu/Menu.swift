@@ -10,6 +10,8 @@ import UIKit
 
 class Menu: UICollectionView {
     
+    public static let shared = Menu()
+    
     private static let layout: UICollectionViewLayout = {
         let size = NSCollectionLayoutSize(widthDimension: .absolute(300), heightDimension: .absolute(300))
         
@@ -26,7 +28,7 @@ class Menu: UICollectionView {
     }()
     
     init() {
-        super.init(frame: UIScreen.main.bounds, collectionViewLayout: Menu.layout)
+        super.init(frame: .zero, collectionViewLayout: Menu.layout)
         setupLayout()
         registerCell()
     }
