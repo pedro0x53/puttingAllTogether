@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6E0A2DEE24926480002307BE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DED24926480002307BE /* Preferences.swift */; };
 		6E0A2DF0249264A8002307BE /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DEF249264A8002307BE /* PreferencesController.swift */; };
+		6E0A2DF82497BAA7002307BE /* ChapterSceneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DF72497BAA7002307BE /* ChapterSceneData.swift */; };
+		6E687E9624991342006E6E22 /* ChapterSceneConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E687E9524991342006E6E22 /* ChapterSceneConfig.swift */; };
 		924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85172489136000E2CB1E /* WeatherAPI.swift */; };
 		924C851A2489138700E2CB1E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85192489138700E2CB1E /* WeatherData.swift */; };
 		FE2A643524979FFA0034637F /* ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A643424979FFA0034637F /* ManagerDelegate.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		6E0A2DED24926480002307BE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		6E0A2DEF249264A8002307BE /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		6E0A2DF72497BAA7002307BE /* ChapterSceneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChapterSceneData.swift; path = puttingAllTogether/Control/ChapterSceneData.swift; sourceTree = SOURCE_ROOT; };
+		6E687E9524991342006E6E22 /* ChapterSceneConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChapterSceneConfig.swift; path = puttingAllTogether/Control/ChapterSceneConfig.swift; sourceTree = SOURCE_ROOT; };
 		924C85172489136000E2CB1E /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = SOURCE_ROOT; };
 		924C85192489138700E2CB1E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = SOURCE_ROOT; };
 		FE2A643424979FFA0034637F /* ManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 			children = (
 				924C85172489136000E2CB1E /* WeatherAPI.swift */,
 				924C85192489138700E2CB1E /* WeatherData.swift */,
+				6E0A2DF72497BAA7002307BE /* ChapterSceneData.swift */,
+				6E687E9524991342006E6E22 /* ChapterSceneConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,7 +371,9 @@
 				924C851A2489138700E2CB1E /* WeatherData.swift in Sources */,
 				FE5552E62487D5690096BF0A /* Initial.swift in Sources */,
 				FE2A643524979FFA0034637F /* ManagerDelegate.swift in Sources */,
+				6E0A2DF82497BAA7002307BE /* ChapterSceneData.swift in Sources */,
 				FE6CD73624869FC30064CAEC /* GameplayController.swift in Sources */,
+				6E687E9624991342006E6E22 /* ChapterSceneConfig.swift in Sources */,
 				924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */,
 				FEE853A624868F260063B3F6 /* AppDelegate.swift in Sources */,
 				6E0A2DF0249264A8002307BE /* PreferencesController.swift in Sources */,
