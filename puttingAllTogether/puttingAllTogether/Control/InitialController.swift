@@ -15,6 +15,7 @@ class InitialController: UIViewController {
     
     let locationManager = CLLocationManager()
     let weatherData = WeatherAPI()
+    let audioManager = AudioManager.shared
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .initial)
     
@@ -37,6 +38,8 @@ class InitialController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways){
             locationManager.requestLocation()
         }
+        audioManager.play(player: .loop, urlString: "theInvestigation")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

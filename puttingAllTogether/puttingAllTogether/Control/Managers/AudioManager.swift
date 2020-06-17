@@ -21,7 +21,7 @@ class AudioManager {
     public var delegate: ManagerDelegate?
     private var sfx: Player
     private var scene: Player
-    private var loop: Player
+    private var loop: AVAudioPlayer
     
     public var position: Int = 0
     public var audios: [Audio] = []
@@ -29,7 +29,7 @@ class AudioManager {
     private init() {
         sfx = Player()
         scene = Player()
-        loop = Player()
+        loop = AVAudioPlayer()
     }
     
     func configurePlayer() {
@@ -63,44 +63,106 @@ class AudioManager {
     func play(player: PlayerType, urlString: String) {
         
         
-        guard let url = URL(string: urlString) else {
-            return
-        }
+        let urlBundle = Bundle.main.path(forResource: urlString, ofType: "mp3")
+                
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                guard let urlBundle = urlBundle else {
+                    return
+                }
+                
+                // exemplo com o SFX, falta mudar pra array e ficar dinâmico pra qualquer tipo de player
+                //sfx = try AVAudioPlayer(contentsOf: URL(string: urlString)!) as! Player
+                
+    //            guard let sfx = sfx else {
+    //                return
+    //            }
+                
+                guard let url = URL(string: urlBundle) else {
+                    return
+                }
+                
+                switch(player) {
+                
+                case .sfx:
+                    do {
+                        sfx = try AVAudioPlayer(contentsOf: url) as! Player
+                        sfx.identifier = .sfx
+                        sfx.delegate = delegate
+                        sfx.play()
+                    }
+                    catch {
+                        print("error ocurred")
+                    }
+                    
+                case .scene:
+                    do {
+                        scene = try AVAudioPlayer(contentsOf: url) as! Player
+                        scene.identifier = .scene
+                        scene.delegate = delegate
+                        scene.play()
+                    }
+                    catch {
+                        print("error ocurred")
+                    }
+                case .loop:
+                    do {
+                        //loop = try AVAudioPlayer(contentsOf: url) as! Player
+                        loop = try AVAudioPlayer(contentsOf: url)
+                        //loop.identifier = .loop
+                        loop.delegate = delegate
+                        loop.play()
+                        print("Deu play")
+                    }
+                    catch {
+                        print("error ocurred")
+                    }
+                }
+                
+                //sfx.play()
+            }
+            catch {
+                print("error ocurred")
+            }
         
-        switch(player) {
+            print("saiu do play")
         
-        case .sfx:
-            do {
-                sfx = try AVAudioPlayer(contentsOf: url) as! Player
-                sfx.identifier = .sfx
-                sfx.delegate = delegate
-                sfx.play()
-            }
-            catch {
-                print("error ocurred")
-            }
-            
-        case .scene:
-            do {
-                scene = try AVAudioPlayer(contentsOf: url) as! Player
-                scene.identifier = .scene
-                scene.delegate = delegate
-                scene.play()
-            }
-            catch {
-                print("error ocurred")
-            }
-        case .loop:
-            do {
-                loop = try AVAudioPlayer(contentsOf: url) as! Player
-                loop.identifier = .loop
-                loop.delegate = delegate
-                loop.play()
-            }
-            catch {
-                print("error ocurred")
-            }
-        }
+//        switch(player) {
+//
+//        case .sfx:
+//            do {
+//                sfx = try AVAudioPlayer(contentsOf: url) as! Player
+//                sfx.identifier = .sfx
+//                sfx.delegate = delegate
+//                sfx.play()
+//            }
+//            catch {
+//                print("error ocurred")
+//            }
+//
+//        case .scene:
+//            do {
+//                scene = try AVAudioPlayer(contentsOf: url) as! Player
+//                scene.identifier = .scene
+//                scene.delegate = delegate
+//                scene.play()
+//            }
+//            catch {
+//                print("error ocurred")
+//            }
+//        case .loop:
+//            do {
+//                loop = try AVAudioPlayer(contentsOf: url) as! Player
+//                loop.identifier = .loop
+//                loop.delegate = delegate
+//                loop.play()
+//                print("Deu play")
+//            }
+//            catch {
+//                print("error ocurred")
+//            }
+//        }
     }
 }
 

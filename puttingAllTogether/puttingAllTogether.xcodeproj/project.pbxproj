@@ -32,6 +32,7 @@
 		FEE853DD24868FAA0063B3F6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853DC24868FAA0063B3F6 /* Config.swift */; };
 		FEE853E0248690760063B3F6 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853DF248690760063B3F6 /* InitialController.swift */; };
 		FEE853E7248692BA0063B3F6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853E6248692BA0063B3F6 /* Colors.swift */; };
+		FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */; };
 		FFD440422497BBC200C97FC7 /* steps1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440412497BBC200C97FC7 /* steps1.mp3 */; };
 		FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440432497BC1400C97FC7 /* rain4.mp3 */; };
 		FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440442497BC1500C97FC7 /* rain1.mp3 */; };
@@ -90,6 +91,7 @@
 		FEE853DC24868FAA0063B3F6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FEE853DF248690760063B3F6 /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
 		FEE853E6248692BA0063B3F6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theInvestigation.mp3; sourceTree = "<group>"; };
 		FFD440412497BBC200C97FC7 /* steps1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps1.mp3; sourceTree = "<group>"; };
 		FFD440432497BC1400C97FC7 /* rain4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain4.mp3; sourceTree = "<group>"; };
 		FFD440442497BC1500C97FC7 /* rain1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain1.mp3; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				FFD440462497BC1600C97FC7 /* rain3.mp3 */,
 				FFD440432497BC1400C97FC7 /* rain4.mp3 */,
 				FFD440412497BBC200C97FC7 /* steps1.mp3 */,
+				FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */,
 			);
 			path = Audios;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */,
 				FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */,
 				FFD440422497BBC200C97FC7 /* steps1.mp3 in Resources */,
 				FEE853B524868F290063B3F6 /* LaunchScreen.storyboard in Resources */,
