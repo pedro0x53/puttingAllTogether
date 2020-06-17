@@ -76,22 +76,6 @@ extension GameplayController: ManagerDelegate {
         gestureManager.activateSwipes(gameplay: gameplay, gestures: .up, .right, .down, .left)
     }
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if let player = player as? Player {
-            switch player.identifier {
-            case .sfx:
-                print("Sfx Audio Finished")
-            case .scene:
-                print("Scene Audio Finished")
-            case .loop:
-                print("Loop Audio Finished")
-            case .none:
-                print("Player Type Not Defined")
-            }
-        }
-        print("Audio Finished")
-    }
-    
     func playerDidFinished() {
         print("Audio Finished")
     }

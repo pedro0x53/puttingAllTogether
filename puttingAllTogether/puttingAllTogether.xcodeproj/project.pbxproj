@@ -39,7 +39,6 @@
 		FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440452497BC1500C97FC7 /* rain2.mp3 */; };
 		FFD4404A2497BC1700C97FC7 /* rain3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440462497BC1600C97FC7 /* rain3.mp3 */; };
 		FFD4404C2497BD2300C97FC7 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD4404B2497BD2300C97FC7 /* AudioManager.swift */; };
-		FFD4404E2497FC4300C97FC7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD4404D2497FC4300C97FC7 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		FFD440452497BC1500C97FC7 /* rain2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain2.mp3; sourceTree = "<group>"; };
 		FFD440462497BC1600C97FC7 /* rain3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain3.mp3; sourceTree = "<group>"; };
 		FFD4404B2497BD2300C97FC7 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		FFD4404D2497FC4300C97FC7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				FEE853E6248692BA0063B3F6 /* Colors.swift */,
-				FFD4404D2497FC4300C97FC7 /* Player.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				FEE853B024868F260063B3F6 /* puttingAllTogether.xcdatamodeld in Sources */,
 				FEE853DD24868FAA0063B3F6 /* Config.swift in Sources */,
 				FE2A64372497A1850034637F /* GesturesManager.swift in Sources */,
-				FFD4404E2497FC4300C97FC7 /* Player.swift in Sources */,
 				FEE853E0248690760063B3F6 /* InitialController.swift in Sources */,
 				924C851A2489138700E2CB1E /* WeatherData.swift in Sources */,
 				FE5552E62487D5690096BF0A /* Initial.swift in Sources */,

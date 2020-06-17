@@ -10,6 +10,5 @@ import UIKit
 import AVFoundation
 
 protocol ManagerDelegate: UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
-    func playerDidFinished()
     func gestureRecognized()
 }
