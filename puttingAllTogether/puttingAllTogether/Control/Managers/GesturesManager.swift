@@ -13,7 +13,6 @@ public enum GesturesType {
     case right
     case down
     case left
-    case pinch
 }
 
 class GesturesManager {
@@ -25,7 +24,6 @@ class GesturesManager {
         }
     }
     
-    private let pinchGesture      = UIPinchGestureRecognizer()
     private let swipeUpGesture    = UISwipeGestureRecognizer()
     private let swipeRightGesture = UISwipeGestureRecognizer()
     private let swipeDownGesture  = UISwipeGestureRecognizer()
@@ -36,9 +34,6 @@ class GesturesManager {
     }
     
     private func setupGestures() {
-        pinchGesture.addTarget(self, action: #selector(pinch))
-        pinchGesture.delegate = delegate
-        
         swipeUpGesture.addTarget(self, action: #selector(swipeUp))
         swipeUpGesture.direction = .up
         swipeUpGesture.delegate = delegate
@@ -54,14 +49,6 @@ class GesturesManager {
         swipeLeftGesture.addTarget(self, action: #selector(swipeLeft))
         swipeLeftGesture.direction = .left
         swipeLeftGesture.delegate = delegate
-    }
-    
-    @objc private func pinch(_ pinch: UIPinchGestureRecognizer) {
-        if(pinch.scale > 1) {
-            print("Code to show the menu goes here...")
-        } else {
-            print("(Maybe) Code to hide the menu goes here...")
-        }
     }
     
     @objc private func swipeUp() {
@@ -115,8 +102,6 @@ class GesturesManager {
                 }, completion: { (completion) in
                     gameplay.leftView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
                 })
-            case .pinch:
-                gameplay.addGestureRecognizer(pinchGesture)
             }
         }
     }
@@ -152,8 +137,6 @@ class GesturesManager {
                 }, completion: { (completion) in
                     gameplay.leftView.isHidden = true
                 })
-            case .pinch:
-                gameplay.removeGestureRecognizer(pinchGesture)
             }
         }
     }

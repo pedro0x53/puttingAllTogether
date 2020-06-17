@@ -16,14 +16,7 @@ class InitialController: UIViewController {
     let locationManager = CLLocationManager()
     let weatherData = WeatherAPI()
     
-    private let menu = [
-        MenuItem(icon: "play_icon", label: "Play",
-                 action: .push, ref: GameplayController()),
-        MenuItem(icon: "settings_icon", label: "Preferências",
-                 action: .push, ref: PreferencesController()),
-        MenuItem(icon: "exit_icon", label: "Sair",
-                 action: .exit)
-    ]
+    public static var menu: [MenuItem] = MenuManager.getMenu(type: .initial)
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -58,34 +51,41 @@ extension InitialController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.menu.count
+        return InitialController.menu.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.identifier, for: indexPath) as! MenuCell
         
-        cell.configure(data: self.menu[indexPath.row])
-        cell.delegate = self
-        cell.index = indexPath.row
+        cell.configure(label: InitialController.menu[indexPath.row].label,
+                       icon: InitialController.menu[indexPath.row].icon)
         
+        let action = InitialController.menu[indexPath.row].action
+        switch action {
+        case .start:
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(start)))
+        case .resume:
+            break
+        case .preferences:
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(preferences)))
+        case .exit:
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exit)))
+        }
         return cell
     }
-}
-
-extension InitialController: MenuDelegate {
-    func presentCurrent(index: Int?) {
-        if let id = index {
-            let action = self.menu[id].action
-            switch action {
-            case .push:
-                if let controller = self.menu[id].ref {
-                    controller.modalPresentationStyle = .overFullScreen
-                    self.navigationController?.pushViewController(controller, animated: true)
-                }
-            case .exit:
-                print("exit")
-            }
-        }
+    
+    @objc private func start() {
+        let controller = GameplayController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func preferences() {
+        let controller = PreferencesController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func exit() {
+        print("Exit Selector")
     }
 }
 

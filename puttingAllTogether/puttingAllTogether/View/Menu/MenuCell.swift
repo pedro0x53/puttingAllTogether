@@ -8,31 +8,28 @@
 
 import UIKit
 
-enum Actions {
-    case push
+public enum Actions {
+    case start
+    case resume
+    case preferences
     case exit
 }
 
-struct MenuItem {
+public class MenuItem {
     var icon: String
     var label: String
     var action: Actions
-    var ref: UIViewController?
     
-    init(icon: String, label: String, action: Actions, ref: UIViewController? = nil) {
+    init(icon: String, label: String, action: Actions) {
         self.icon = icon
         self.label = label
         self.action = action
-        self.ref = ref
     }
 }
 
 class MenuCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     public static var identifier: String = "menuItem"
-    
-    public var delegate: MenuDelegate?
-    public var index: Int?
     
     private var label: UILabel = UILabel()
     private var iconView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
@@ -79,13 +76,8 @@ class MenuCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         label.centerXAnchor.constraint(equalTo: iconView.centerXAnchor).isActive = true
     }
     
-    public func configure(data: MenuItem) {
-        label.text = data.label
-        icon.image = UIImage(named: data.icon)
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(itemTapped)))
-    }
-    
-    @objc func itemTapped() {
-        delegate?.presentCurrent(index: self.index)
+    public func configure(label: String, icon: String) {
+        self.label.text = label
+        self.icon.image = UIImage(named: icon)
     }
 }
