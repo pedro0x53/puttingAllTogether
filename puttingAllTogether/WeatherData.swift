@@ -8,36 +8,29 @@
 
 import Foundation
 
+class WeatherData : Codable {
+    var weather : Array<subWeather>?
+    var main : Dictionary<String, Float>?
+    var visibility : Int?
+    var wind : Dictionary<String, Float>?
+    var clouds : Dictionary<String, Float>?
+    var name : String?
+}
+
 struct subWeather : Codable {
     var id : Int
     var main : String
     var description : String
-    var icon : String
 }
 
-struct subSys : Codable {
-    var type : Int
-    var id : Int
-    var country : String
-    var sunrise : Double
-    var sunset : Double
-}
-
-public struct WeatherData : Codable {
-    var coord : Dictionary<String, Float>
-    var weather : Array<subWeather>
-    var base : String
-    var main : Dictionary<String, Float>
-    var visibility : Int
-    var wind : Dictionary<String, Float>
-    var clouds : Dictionary<String, Float>
-    var dt : Double
-    var sys : subSys
-    var timezone : Int
-    var id : Int
-    var name : String
-    var cod : Int
-}
+//public struct CurrentWeather : Codable {
+//    var weather : Array<subWeather>
+//    var main : Dictionary<String, Float>
+//    var visibility : Int
+//    var wind : Dictionary<String, Float>
+//    var clouds : Dictionary<String, Float>
+//    var name : String
+//}
 
 //MARK: - Reference for API response
 
