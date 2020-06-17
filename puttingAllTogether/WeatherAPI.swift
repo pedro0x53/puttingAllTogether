@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 public class WeatherAPI {
-    var info : WeatherData?
+    var userWeather = WeatherData()
     
     var locationCoordinates = (latitude : 0.0, longitude : 0.0)
     let APIKey = "9402f537f757e5a96e51fef8c3c29882"
@@ -34,7 +34,6 @@ public class WeatherAPI {
         
         let url = URL(string: weatherURLString)!
         
-        //Semáforo só até saber onde tratar a requisição assíncrona
         let semaphore = DispatchSemaphore(value: 0)
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -50,7 +49,7 @@ public class WeatherAPI {
             
             let decoder = JSONDecoder()
             do {
-                self.info = try decoder.decode(WeatherData.self, from: data!)
+                self.userWeather = try decoder.decode(WeatherData.self, from: data!)
                 semaphore.signal()
             } catch {
                 print(error)
@@ -65,43 +64,52 @@ public class WeatherAPI {
     //MARK: - Print for Tests
     
     func printAllInfo() {
-        print("Weather: \(getWeather())")
-        print("Temperature: \(getCelsiusTemperature()) Celsius")
-        print("Wind Speed: \(getWindSpeed()) m/s")
-        print("Clouds: \(getCloudiness())%")
-        print("Visibility: \(getVisibility()) meters")
+        print("""
+        Place: \(getPlace())
+        Weather: \(getWeather())
+        Temperature: \(getCelsiusTemperature()) Celsius
+        Wind Speed: \(getWindSpeed()) m/s
+        Clouds: \(getCloudiness())%
+        Visibility: \(getVisibility()) meters
+        """)
     }
     
     //MARK: - Game Requests
     
-    func getWeather() -> String {
-        guard info != nil else {
-            fatalError("No weather information in memory!")
+    func getPlace() -> String {
+        if let placeName = userWeather.name {
+            return placeName
+        } else {
+            fatalError("No place information in memory!")
         }
-        
-        let weatherId = info?.weather[0].id
-        
-        switch weatherId! {
-            case 200...232:
-                return "Thunderstorm"
-            case 300...321:
-                return "Drizzle"
-            case 500...531:
-                return "Rain"
-            case 600...622:
-                return "Snow"
-            case 800:
-                return "Clear"
-            case 801...804:
-                return "Clouds"
-            default:
-                return "Clear"
+    }
+    
+    func getWeather() -> String {
+        if let weatherId = userWeather.weather?[0].id {
+            switch weatherId {
+                case 200...232:
+                    return "Thunderstorm"
+                case 300...321:
+                    return "Drizzle"
+                case 500...531:
+                    return "Rain"
+                case 600...622:
+                    return "Snow"
+                case 800:
+                    return "Clear"
+                case 801...804:
+                    return "Clouds"
+                default:
+                    return "Clear"
+            }
+        } else {
+            fatalError("No weather information in memory!")
         }
     }
     
     //Visibilidade em metros
     func getVisibility() -> Int {
-        if let visibility = info?.visibility {
+        if let visibility = userWeather.visibility {
             return visibility
         } else {
             fatalError("No visibility information in memory!")
@@ -110,7 +118,7 @@ public class WeatherAPI {
     
     //Velocidade do vento em metros por segundo
     func getWindSpeed() -> Float {
-        if let wind = info?.wind["speed"] {
+        if let wind = userWeather.wind?["speed"] {
             return wind
         } else {
             fatalError("No wind information in memory!")
@@ -119,7 +127,7 @@ public class WeatherAPI {
     
     //Nuvens em percentual do céu coberto
     func getCloudiness() -> Float {
-        if let clouds = info?.clouds["all"] {
+        if let clouds = userWeather.clouds?["all"] {
             return clouds
         } else {
             fatalError("No cloud information in memory!")
@@ -127,23 +135,23 @@ public class WeatherAPI {
     }
     
     func getCelsiusTemperature() -> Float {
-        guard info != nil else {
-            fatalError("No temperature information in memory!")
+        if let kelvinTemp = userWeather.main?["temp"] {
+            let celsiusTemp = kelvinTemp - 273.15
+            return celsiusTemp
+        } else {
+            fatalError("No cloud information in memory!")
         }
-        
-        let kelvinTemp = info?.main["temp"]
-        let celsiusTemp = kelvinTemp! - 273.15
-        return celsiusTemp
     }
     
     func getFahrenheitTemperature() -> Float {
-        guard info != nil else {
+        if let kelvinTemp = userWeather.main?["temp"] {
+            let fahrenheitTemp = -459.67 + (9*kelvinTemp)/5
+            return fahrenheitTemp
+        } else {
             fatalError("No temperature information in memory!")
         }
         
-        let celsiusTemp = getCelsiusTemperature()
-        let fahrenheitTemp = 32 + (9*celsiusTemp)/5
-        return fahrenheitTemp
+        
     }
     
 }
