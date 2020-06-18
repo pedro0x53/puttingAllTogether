@@ -24,6 +24,8 @@ class Gameplay: UIView {
     
     let pauseBtn: UIButton = UIButton()
     
+    let swipeLayer: UIView = UIView()
+    
     var topView: UIView = UIView()
     var rightView: UIView = UIView()
     var bottomView: UIView = UIView()
@@ -129,6 +131,13 @@ class Gameplay: UIView {
         leftView.layer.addSublayer(generateLinearGradient(frame: leftView.frame,
                                                           direction: .toRight))
         
+        
+        self.addSubview(swipeLayer)
+        swipeLayer.translatesAutoresizingMaskIntoConstraints = false
+        swipeLayer.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        swipeLayer.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        swipeLayer.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        swipeLayer.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         
         self.addSubview(pauseBtn)
         pauseBtn.setImage(UIImage(named: "pause_icon"), for: .normal)

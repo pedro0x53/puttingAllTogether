@@ -71,7 +71,7 @@ class GesturesManager {
         for gesture in gestures {
             switch gesture {
             case .up:
-                gameplay.addGestureRecognizer(swipeUpGesture)
+                gameplay.swipeLayer.addGestureRecognizer(swipeUpGesture)
                 gameplay.topView.isHidden = false
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.topView.alpha = 0.9
@@ -79,7 +79,7 @@ class GesturesManager {
                     gameplay.topView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
                 })
             case .right:
-                gameplay.addGestureRecognizer(swipeRightGesture)
+                gameplay.swipeLayer.addGestureRecognizer(swipeRightGesture)
                 gameplay.rightView.isHidden = false
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.rightView.alpha = 0.9
@@ -87,7 +87,7 @@ class GesturesManager {
                     gameplay.rightView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
                 })
             case .down:
-                gameplay.addGestureRecognizer(swipeDownGesture)
+                gameplay.swipeLayer.addGestureRecognizer(swipeDownGesture)
                 gameplay.bottomView.isHidden = false
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.bottomView.alpha = 0.9
@@ -95,7 +95,7 @@ class GesturesManager {
                     gameplay.bottomView.layer.add(Gameplay.pulseAnimation, forKey: "pulseAnimation")
                 })
             case .left:
-                gameplay.addGestureRecognizer(swipeLeftGesture)
+                gameplay.swipeLayer.addGestureRecognizer(swipeLeftGesture)
                 gameplay.leftView.isHidden = false
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.leftView.alpha = 0.9
@@ -110,28 +110,28 @@ class GesturesManager {
         for gesture in gestures {
             switch gesture {
             case .up:
-                gameplay.removeGestureRecognizer(swipeUpGesture)
+                gameplay.swipeLayer.removeGestureRecognizer(swipeUpGesture)
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.topView.alpha = 0
                 }, completion: { (completion) in
                     gameplay.topView.isHidden = true
                 })
             case .right:
-                gameplay.removeGestureRecognizer(swipeRightGesture)
+                gameplay.swipeLayer.removeGestureRecognizer(swipeRightGesture)
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.rightView.alpha = 0
                 }, completion: { (completion) in
                     gameplay.rightView.isHidden = true
                 })
             case .down:
-                gameplay.removeGestureRecognizer(swipeDownGesture)
+                gameplay.swipeLayer.removeGestureRecognizer(swipeDownGesture)
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.bottomView.alpha = 0
                 }, completion: { (completion) in
                     gameplay.bottomView.isHidden = true
                 })
             case .left:
-                gameplay.removeGestureRecognizer(swipeLeftGesture)
+                gameplay.swipeLayer.removeGestureRecognizer(swipeLeftGesture)
                 UIView.animate(withDuration: 1.5, animations: {
                     gameplay.leftView.alpha = 0
                 }, completion: { (completion) in
