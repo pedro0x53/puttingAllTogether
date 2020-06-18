@@ -1,0 +1,17 @@
+{
+    "chapterID"       : 0,
+    "scenes" : [{
+        "sceneID" : 0,
+        "audioURL"    : "The URL",
+        "hasGestures" : true,
+        "gestures"    : ["up","down"],
+        "hasSFX"      : true,
+        "sfx"         : [{
+                            "audioURL": "SFX URL",
+                            "options" :
+                                    {"channel" : "both",
+                                     "volume"  : 0.63 }
+            
+                        }]
+                }]
+}

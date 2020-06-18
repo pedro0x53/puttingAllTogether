@@ -9,20 +9,23 @@ import Foundation
 struct Chapter: Codable{
     let chapterID: Int
     var scenes: [Scene]
-    func nextChapter(){
-        //pass onto the next chapter
-    }
 }
 struct Scene: Codable {
+    let sceneID: Int
     let audioURL: String
     let hasGestures: Bool
     let gestures: [String]?
     let hasSFX: Bool
-    let sfx: [String]?
-    
-    func nextScene(){
-        //goes to the next scene
-    }
+    let sfx: [SFX]?
+}
+
+struct SFX: Codable{
+    let audioURL: String
+    let options: sfxOptions
+}
+struct sfxOptions: Codable{
+    let channel: String
+    let volume: Double
 }
 
 
