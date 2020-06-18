@@ -37,6 +37,9 @@ class InitialController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways){
             locationManager.requestLocation()
+        } else {
+            WeatherData.shared.setDefaultData()
+//            WeatherData.shared.printTest()
         }
         audioManager.delegate = self
         audioManager.play(player: .loop, urlString: "theInvestigation")

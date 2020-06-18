@@ -37,11 +37,13 @@ public class WeatherAPI {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 print("Client error!")
+                WeatherData.shared.setDefaultData()
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 print("Server error!")
+                WeatherData.shared.setDefaultData()
                 return
             }
             
@@ -57,6 +59,8 @@ public class WeatherAPI {
         task.resume()
         
         semaphore.wait()
+        
+//        WeatherData.shared.printTest()
     }
     
 }

@@ -36,6 +36,29 @@ class WeatherData : Codable {
     """)
     }
     
+    func setDefaultData() {
+        weather = [
+            subWeather(id: 500, main: "Rain", description: "light rain")
+        ]
+        main = [
+            "temp": 303.25,
+            "feels_like": 301.3,
+            "temp_min": 280.15,
+            "temp_max": 304.15,
+            "pressure": 1014,
+            "humidity": 58
+        ]
+        visibility = 10000
+        wind = [
+            "speed": 3.0,
+            "deg": 90
+        ]
+        clouds = [
+            "all": 25
+        ]
+        name = "Lugar Nenhum"
+    }
+    
     func resetData() {
         weather = nil
         main = nil

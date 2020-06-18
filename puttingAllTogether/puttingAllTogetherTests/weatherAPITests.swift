@@ -112,5 +112,16 @@ class WeatherDataTests: XCTestCase {
         //Then
         XCTAssertEqual(visibility, 10000)
     }
+    
+    func test_weatherData_visibility_nil() {
+        //Given
+        WeatherData.shared.visibility = nil
+
+        //When
+        let visibility = WeatherData.shared.getVisibility()
+
+        //Then
+        XCTAssertEqual(visibility, nil)
+    }
 
 }
