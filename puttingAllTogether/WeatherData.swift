@@ -8,29 +8,122 @@
 
 import Foundation
 
-class WeatherData : Codable {
-    var weather : Array<subWeather>?
-    var main : Dictionary<String, Float>?
-    var visibility : Int?
-    var wind : Dictionary<String, Float>?
-    var clouds : Dictionary<String, Float>?
-    var name : String?
-}
-
 struct subWeather : Codable {
     var id : Int
     var main : String
     var description : String
 }
 
-//public struct CurrentWeather : Codable {
-//    var weather : Array<subWeather>
-//    var main : Dictionary<String, Float>
-//    var visibility : Int
-//    var wind : Dictionary<String, Float>
-//    var clouds : Dictionary<String, Float>
-//    var name : String
-//}
+class WeatherData : Codable {
+    static var shared = WeatherData()
+    
+    var weather : Array<subWeather>?
+    var main : Dictionary<String, Float>?
+    var visibility : Int?
+    var wind : Dictionary<String, Float>?
+    var clouds : Dictionary<String, Float>?
+    var name : String?
+    
+    private init() {}
+    
+    func printTest() {
+        print("""
+        Place: \(getPlace())
+        Weather: \(getWeather())
+        Temperature: \(getCelsiusTemperature()) Celsius
+        Wind Speed: \(getWindSpeed()) m/s
+        Cloudiness: \(getCloudiness()) percent coverage
+    """)
+    }
+    
+    func resetData() {
+        weather = nil
+        main = nil
+        visibility = nil
+        wind = nil
+        clouds = nil
+        name = nil
+    }
+    
+    func getPlace() -> String {
+        if let placeName = name {
+            return placeName
+        } else {
+            fatalError("No place information in memory!")
+        }
+    }
+    
+    func getWeather() -> String {
+        if let weatherId = weather?[0].id {
+            switch weatherId {
+                case 200...232:
+                    return "Thunderstorm"
+                case 300...321:
+                    return "Drizzle"
+                case 500...531:
+                    return "Rain"
+                case 600...622:
+                    return "Snow"
+                case 800:
+                    return "Clear"
+                case 801...804:
+                    return "Clouds"
+                default:
+                    return "Clear"
+            }
+        } else {
+            fatalError("No weather information in memory!")
+        }
+    }
+    
+    //Visibilidade em metros
+    func getVisibility() -> Int {
+        if let visibility = visibility {
+            return visibility
+        } else {
+            fatalError("No visibility information in memory!")
+        }
+    }
+    
+    //Velocidade do vento em metros por segundo
+    func getWindSpeed() -> Float {
+        if let wind = wind?["speed"] {
+            return wind
+        } else {
+            fatalError("No wind information in memory!")
+        }
+    }
+    
+    //Nuvens em percentual do céu coberto
+    func getCloudiness() -> Float {
+        if let clouds = clouds?["all"] {
+            return clouds
+        } else {
+            fatalError("No cloud information in memory!")
+        }
+    }
+    
+    func getCelsiusTemperature() -> Float {
+        if let kelvinTemp = main?["temp"] {
+            let celsiusTemp = kelvinTemp - 273.15
+            return celsiusTemp
+        } else {
+            fatalError("No cloud information in memory!")
+        }
+    }
+    
+    func getFahrenheitTemperature() -> Float {
+        if let kelvinTemp = main?["temp"] {
+            let fahrenheitTemp = -459.67 + (9*kelvinTemp)/5
+            return fahrenheitTemp
+        } else {
+            fatalError("No temperature information in memory!")
+        }
+        
+        
+    }
+    
+}
 
 //MARK: - Reference for API response
 

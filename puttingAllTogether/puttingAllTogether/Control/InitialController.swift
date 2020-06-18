@@ -15,7 +15,6 @@ class InitialController: UIViewController {
     let initial = Initial()
     
     let locationManager = CLLocationManager()
-    let weatherData = WeatherAPI()
     let audioManager = AudioManager.shared
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .initial)
@@ -136,9 +135,9 @@ extension InitialController : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            weatherData.setLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            weatherData.weatherRequestInfo()
-            weatherData.printAllInfo()
+            let weatherAPI = WeatherAPI()
+            weatherAPI.setLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            weatherAPI.weatherInfoRequest()
         }
     }
     
