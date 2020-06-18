@@ -41,7 +41,6 @@ class GameplayController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tell()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -126,7 +125,7 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension GameplayController: ManagerDelegate {
-    private func tell() {
+    private func tell(scene: Scene) {
         print("Play scene audio")
     }
     
@@ -138,7 +137,7 @@ extension GameplayController: ManagerDelegate {
     
     func playNextScene() {
         print("Play next scene")
-        tell()
+        // tell(scene: chapterManger.currentScene)
     }
     
     func gestureRecognized(gesture: GesturesType) {
