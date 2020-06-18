@@ -39,7 +39,6 @@ class InitialController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways){
             locationManager.requestLocation()
         }
-        audioManager.delegate = self
         audioManager.play(player: .loop, urlString: "theInvestigation")
         
     }
@@ -147,14 +146,4 @@ extension InitialController : CLLocationManagerDelegate {
         print("Error in getting location: Location Services probably disabled")
     }
     
-}
-
-extension InitialController: ManagerDelegate {
-    func gestureRecognized() {
-        print("Gesture Recognized")
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print(player)
-    }
 }

@@ -23,9 +23,6 @@ class AudioManager {
     private var scene: AVAudioPlayer
     private var loop: AVAudioPlayer
     
-    public var position: Int = 0
-    public var audios: [Audio] = []
-    
     private init() {
         sfx = AVAudioPlayer()
         scene = AVAudioPlayer()
@@ -54,11 +51,13 @@ class AudioManager {
                 case .sfx:
                     do {
                         sfx = try AVAudioPlayer(contentsOf: url)
-                        sfx.delegate = delegate
                         sfx.play()
                     }
                     catch {
-                        print("error ocurred")
+                        print("""
+                            Error: Failed to play SFX audio.
+                            \(error.localizedDescription)
+                        """)
                     }
                     
                 case .scene:
@@ -68,44 +67,30 @@ class AudioManager {
                         scene.play()
                     }
                     catch {
-                        print("error ocurred")
+                        print("""
+                            Error: Failed to play Scene audio.
+                            \(error.localizedDescription)
+                        """)
                     }
                 case .loop:
                     do {
                         loop = try AVAudioPlayer(contentsOf: url)
-                        loop.delegate = delegate
                         loop.play()
                     }
                     catch {
-                        print("error ocurred")
+                        print("""
+                            Error: Failed to play Loop audio.
+                            \(error.localizedDescription)
+                        """)
                     }
                 }
                 
             }
             catch {
-                print("error ocurred")
+                print("""
+                    Error: Failed to configure Audio Session.
+                    \(error.localizedDescription)
+                """)
             }
     }
-}
-
-//class SfxAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-//
-//class SceneAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-//
-//class LoopAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-
-
-
-struct Audio {
-    let name: String
-    let group: String
 }
