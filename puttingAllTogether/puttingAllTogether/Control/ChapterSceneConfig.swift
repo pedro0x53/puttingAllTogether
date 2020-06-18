@@ -16,8 +16,14 @@ let jsonTemplate = """
         "hasGestures" : true,
         "gestures"    : ["up","down"],
         "hasSFX"      : true,
-        "sfx"         : ["screaming", "leaves"]
-    }]
+        "sfx"         : [{
+                            "audioURL": "SFX URL",
+                            "options" :
+                                    {"channel" : "both",
+                                     "volume"  : 0.63 }
+            
+                        }]
+                }]
 }
 """.data(using: .utf8)!
 
@@ -36,7 +42,6 @@ class ChapterSceneConfig{
         print("Chapter ID: \(String(describing: chapter?.chapterID))")
         var aux = 0
         guard let scenes = chapter?.scenes else { return }
-        print(scenes)
         for scene in scenes{
             print("Scene \(aux)")
             print("Audio URL: \(scene.audioURL)")

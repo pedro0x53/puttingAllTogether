@@ -18,11 +18,26 @@ struct Scene: Codable {
     let hasGestures: Bool
     let gestures: [String]?
     let hasSFX: Bool
-    let sfx: [String]?
+    let sfx: [SFX]?
     
     func nextScene(){
         //goes to the next scene
     }
+}
+
+struct SFX: Codable{
+    let audioURL: String
+    let options: sfxOptions
+}
+//enum volumeChannel {
+//       case left
+//       case right
+//       case both
+//   }
+struct sfxOptions: Codable{
+    let channel: String
+    let volume: Double
+    
 }
 
 
