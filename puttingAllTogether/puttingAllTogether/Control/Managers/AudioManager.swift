@@ -20,8 +20,23 @@ class AudioManager {
     public static let shared: AudioManager = AudioManager()
     public var delegate: ManagerDelegate?
     private var sfx: AVAudioPlayer
+    public var sfxVolume: Float = 0.5 {
+        didSet {
+            sfx.volume = sfxVolume
+        }
+    }
     private var scene: AVAudioPlayer
+    public var sceneVolume: Float = 0.5 {
+        didSet {
+            scene.volume = sceneVolume
+        }
+    }
     private var loop: AVAudioPlayer
+    public var loopVolume: Float = 0.5{
+        didSet {
+            loop.volume = loopVolume
+        }
+    }
     
     public var position: Int = 0
     public var audios: [Audio] = []
@@ -86,24 +101,19 @@ class AudioManager {
                 print("error ocurred")
             }
     }
+    
+    func pause() {
+        sfx.pause()
+        scene.pause()
+        loop.pause()
+    }
+    
+    func resume() {
+        sfx.play()
+        scene.play()
+        loop.play()
+    }
 }
-
-//class SfxAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-//
-//class SceneAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-//
-//class LoopAudioDelegate: AVAudioPlayerDelegate {
-//
-//
-//}
-
-
 
 struct Audio {
     let name: String

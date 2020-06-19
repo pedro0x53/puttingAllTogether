@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PreferencesController: UIViewController {
     //preferences view
     var preferences = Preferences()
+    var audioManager = AudioManager.shared
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -19,6 +21,13 @@ class PreferencesController: UIViewController {
     override func loadView() {
         super.loadView()
         view = preferences
+        
+        preferences.generalVolumeSlider.value = audioManager.sfxVolume
+        preferences.generalVolumeSlider.addTarget(self, action: #selector(didSlideSliderGeneral(_:)), for: .valueChanged)
+        preferences.dubbingVolumeSlider.value = audioManager.sceneVolume
+        preferences.dubbingVolumeSlider.addTarget(self, action: #selector(didSlideSliderDubbing(_:)), for: .valueChanged)
+        preferences.effectsVolumeSlider.value = audioManager.loopVolume
+        preferences.effectsVolumeSlider.addTarget(self, action: #selector(didSlideSliderEffects(_:)), for: .valueChanged)
     }
     
     override func viewDidLoad() {
@@ -32,5 +41,20 @@ class PreferencesController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    @objc func didSlideSliderGeneral(_ slider: UISlider) {
+        let value = slider.value
+        audioManager.sfxVolume = value
+    }
+    
+    @objc func didSlideSliderDubbing(_ slider: UISlider) {
+        let value = slider.value
+        audioManager.sceneVolume = value
+    }
+    
+    @objc func didSlideSliderEffects(_ slider: UISlider) {
+        let value = slider.value
+        audioManager.loopVolume = value
     }
 }

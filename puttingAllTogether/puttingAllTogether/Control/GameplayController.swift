@@ -16,6 +16,8 @@ class GameplayController: UIViewController {
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .gameplay)
     
+    var audioManager = AudioManager.shared
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -52,6 +54,14 @@ class GameplayController: UIViewController {
         self.gameplay.pauseBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pause)))
         
         self.gameplay.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(callMenu)))
+    }
+    
+    func pausePlayers() {
+        audioManager.pause()
+    }
+    
+    func resumePlayers() {
+        audioManager.resume()
     }
     
     @objc public func callMenu(pinch: UIPinchGestureRecognizer) {
@@ -120,6 +130,7 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
         UIView.animate(withDuration: 0.5, animations: {
             self.gameplay.overlay.alpha = 1
         }, completion:  nil)
+        pausePlayers()
     }
     
     @objc private func resume() {
@@ -128,6 +139,7 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
         }, completion: { (completion) in
             self.gameplay.overlay.isHidden = true
         })
+        resumePlayers()
     }
     
     @objc private func preferences() {
