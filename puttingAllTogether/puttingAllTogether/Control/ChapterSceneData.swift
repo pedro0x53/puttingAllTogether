@@ -14,9 +14,9 @@ struct Scene: Codable {
     let sceneID: Int
     let audioURL: String
     let hasGestures: Bool
-    let gestures: [String]?
+    let gestures: [String]
     let hasSFX: Bool
-    let sfx: [SFX]?
+    let sfx: [SFX]
 }
 
 struct SFX: Codable{

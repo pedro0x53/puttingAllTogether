@@ -8,11 +8,11 @@
 
 import UIKit
 
-public enum GesturesType {
-    case up
-    case right
-    case down
-    case left
+public enum GesturesType: String {
+    case up = "up"
+    case right = "right"
+    case down = "down"
+    case left = "left"
 }
 
 class GesturesManager {
@@ -54,18 +54,22 @@ class GesturesManager {
     
     @objc private func swipeUp() {
         print("Swipe up recognized!")
+        delegate?.gestureRecognized(gesture: .up)
     }
     
     @objc private func swipeRight() {
         print("Swipe right recognized!")
+        delegate?.gestureRecognized(gesture: .right)
     }
     
     @objc private func swipeDown() {
         print("Swipe down recognized!")
+        delegate?.gestureRecognized(gesture: .down)
     }
     
     @objc private func swipeLeft() {
         print("Swipe left recognized!")
+        delegate?.gestureRecognized(gesture: .left)
     }
     
     public func activateSwipes(gameplay: Gameplay, gestures: GesturesType...) {

@@ -1,0 +1,13 @@
+{
+    "chapterID": 0,
+    "scenes": [
+        {
+            "sceneID": 0,
+            "audioURL": "theInvestigation",
+            "hasGestures": false,
+            "gestures": [],
+            "hasSFX": false,
+            "sfx": []
+        }
+    ]
+}

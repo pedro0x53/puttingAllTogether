@@ -8,17 +8,31 @@
 
 import Foundation
 
-
 class ChapterSceneManager{
-    public var currentChapter: Chapter? 
-    public var currentScene: Scene?
+    
     public static let shared: ChapterSceneManager = ChapterSceneManager()
     
+    private var chapter: Chapter? {
+        didSet {
+            if let chapter = self.chapter {
+                currentChapter = chapter
+            }
+        }
+    }
+    public var currentChapter: Chapter!
     
+    private var scene: Scene? {
+        didSet {
+            if let scene = self.scene {
+                currentScene = scene
+            }
+        }
+    }
+    public var currentScene: Scene!
     
     init() {
         //let save = StoreManager.getLastSave()
-        currentChapter = getChapter(id: 0)!
+        currentChapter = getChapter(id: 0)
         currentScene = currentChapter?.scenes[0]
     }
     
@@ -39,7 +53,10 @@ class ChapterSceneManager{
         do {
             self.currentChapter = try JSONDecoder().decode(Chapter.self, from: jsonData)
         } catch {
-            print(error.localizedDescription)
+            fatalError("""
+                Failed to decode JSON
+                \(error.localizedDescription)
+            """)
         }
     }
     
@@ -48,7 +65,7 @@ class ChapterSceneManager{
     private func getChapter(id: Int) -> Chapter? {
         var res: Chapter?
         //data is feeding from only one json
-        if let data = readLocalFile(forName: "data") {
+        if let data = readLocalFile(forName: "chapter\(id)") {
             do {
                 let chapter = try JSONDecoder().decode(Chapter.self, from: data)
                     if chapter.chapterID == id {
@@ -56,7 +73,7 @@ class ChapterSceneManager{
                     }
                 
             } catch {
-                print("""
+                fatalError("""
                     Unable to decode chapter.
                     \(error.localizedDescription)
                 """)
@@ -67,30 +84,11 @@ class ChapterSceneManager{
     }
 
     public func getNextScene() {
-        guard let chapter = currentChapter else { fatalError("Could not read currentChapter") }
-        guard let scene = currentScene else { fatalError("Could not read currentScene") }
-        if scene.sceneID < chapter.scenes.count + 1 {
-            currentScene = chapter.scenes[scene.sceneID + 1]
+        if self.currentScene.sceneID < currentChapter.scenes.count - 1 {
+            self.currentScene = self.currentChapter.scenes[currentScene.sceneID + 1]
         } else {
-            currentChapter = getChapter(id: chapter.chapterID + 1)!
-            currentScene = chapter.scenes[0]
+            self.chapter = getChapter(id: currentChapter.chapterID + 1)!
+            self.currentScene = self.currentChapter.scenes[0]
         }
     }
-   //unused
-//    func getInfo(){
-//        print("Chapter ID: \(String(describing: chapter?.chapterID))")
-//        var aux = 0
-//        guard let scenes = chapter?.scenes else { return }
-//        for scene in scenes{
-//            print("Scene \(aux)")
-//            print("Audio URL: \(scene.audioURL)")
-//            if scene.hasGestures{
-//                print(scene.gestures!)
-//            }
-//            if scene.hasSFX{
-//                print(scene.sfx!)
-//            }
-//            aux+=1
-//        }
-//    }
 }
