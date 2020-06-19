@@ -1,0 +1,29 @@
+{
+    "chapterID": 0,
+    "scenes": [
+        {
+            "sceneID": 0,
+            "audioURL": "rain1",
+            "hasGestures": true,
+            "gestures": ["left", "right"],
+            "hasSFX": true,
+            "sfx": [
+                {
+                    "audioURL": "steps1",
+                    "options": {
+                        "channel": "both",
+                        "volume": 0.63
+                    }
+                }
+            ]
+        },
+        {
+            "sceneID": 1,
+            "audioURL": "rain2",
+            "hasGestures": true,
+            "gestures": [],
+            "hasSFX": true,
+            "sfx": []
+        }
+    ]
+}

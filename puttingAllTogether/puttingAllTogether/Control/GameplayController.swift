@@ -13,6 +13,8 @@ class GameplayController: UIViewController {
     
     private let gameplay: Gameplay = Gameplay.shared
     private let gestureManager: GesturesManager = GesturesManager.shared
+    private let audioManager: AudioManager = AudioManager.shared
+    private let chapterManager: ChapterSceneManager = ChapterSceneManager.shared
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .gameplay)
     
@@ -35,12 +37,14 @@ class GameplayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gestureManager.delegate = self
         self.gameplay.menu.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        gestureManager.delegate = self
+        audioManager.delegate = self
+        tell(scene: chapterManager.currentScene)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -126,34 +130,55 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension GameplayController: ManagerDelegate {
     private func tell(scene: Scene) {
-        print("Play scene audio")
+        let url = scene.audioURL
+        self.audioManager.play(player: .scene, urlString: url)
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("Scene did finish")
         checkSFX()
         checkGestures()
     }
     
     func playNextScene() {
-        print("Play next scene")
-        // tell(scene: chapterManger.currentScene)
+        self.chapterManager.getNextScene()
+        tell(scene: self.chapterManager.currentScene)
     }
     
     func gestureRecognized(gesture: GesturesType) {
-        print("Gesture Recognized")
+        self.gestureManager.deactivateSwipes(gameplay: self.gameplay,
+                                             gestures: .up, .right, .down, .left)
         playNextScene()
     }
     
     func checkSFX() {
-        print("hasSFX")
-        print("play SFX")
+        if self.chapterManager.currentScene.hasSFX {
+            if self.chapterManager.currentScene.sfx.count > 0 {
+                let sfx = self.chapterManager.currentScene.sfx[0]
+                self.audioManager.play(player: .sfx, urlString: sfx.audioURL)
+            }
+        }
     }
        
     func checkGestures() {
-        print("hasGestures")
-        print("activate Gestures")
-        gestureManager.activateSwipes(gameplay: gameplay,
-                                      gestures: .up, .right, .down, .left)
+        if self.chapterManager.currentScene.hasGestures {
+            for gesture in self.chapterManager.currentScene.gestures {
+                switch gesture {
+                case GesturesType.up.rawValue:
+                    self.gestureManager.activateSwipes(gameplay: self.gameplay,
+                                                       gestures: .up)
+                case GesturesType.right.rawValue:
+                    self.gestureManager.activateSwipes(gameplay: self.gameplay,
+                                                       gestures: .right)
+                case GesturesType.down.rawValue:
+                    self.gestureManager.activateSwipes(gameplay: self.gameplay,
+                                                       gestures: .down)
+                case GesturesType.left.rawValue:
+                    self.gestureManager.activateSwipes(gameplay: self.gameplay,
+                                                       gestures: .left)
+                default:
+                    break
+                }
+            }
+        }
     }
 }
