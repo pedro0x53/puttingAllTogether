@@ -8,11 +8,10 @@
 
 import Foundation
 
-public class WeatherAPI {
+class WeatherAPI {
     
     var locationCoordinates = (latitude : 0.0, longitude : 0.0)
     let APIKey = "9402f537f757e5a96e51fef8c3c29882"
-    var weatherURLString = ""
    
     //MARK: - Update User Location
     
@@ -23,14 +22,13 @@ public class WeatherAPI {
     
     //MARK: - OpenWeatherMap API Request
     
-    private func createURLString() {
-        weatherURLString = "https://api.openweathermap.org/data/2.5/weather?lat=\(locationCoordinates.latitude)&lon=\(locationCoordinates.longitude)&appid=\(APIKey)"
+    func createURLString() -> String {
+        return "https://api.openweathermap.org/data/2.5/weather?lat=\(locationCoordinates.latitude)&lon=\(locationCoordinates.longitude)&appid=\(APIKey)"
     }
     
     func weatherInfoRequest() {
-        createURLString()
         
-        let url = URL(string: weatherURLString)!
+        let url = URL(string: createURLString())!
         
         let semaphore = DispatchSemaphore(value: 0)
         
