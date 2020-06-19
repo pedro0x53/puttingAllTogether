@@ -8,6 +8,15 @@
 
 import Foundation
 
+enum WeatherDataError : Error {
+    case nilPlace
+    case nilWeather
+    case nilTemperature
+    case nilWind
+    case nilCloudiness
+    case nilVisibility
+}
+
 struct subWeather : Codable {
     var id : Int
     var main : String
@@ -16,6 +25,7 @@ struct subWeather : Codable {
 
 class WeatherData : Codable {
     static var shared = WeatherData()
+    var temperatureFormat = "Celsius"
     
     var weather : Array<subWeather>?
     var main : Dictionary<String, Float>?
@@ -26,14 +36,37 @@ class WeatherData : Codable {
     
     private init() {}
     
-    func printTest() {
-        print("""
-        Place: \(getPlace())
-        Weather: \(getWeather())
-        Temperature: \(getCelsiusTemperature()) Celsius
-        Wind Speed: \(getWindSpeed()) m/s
-        Cloudiness: \(getCloudiness()) percent coverage
-    """)
+//    func printTest() {
+//        print("""
+//        Place: \(getPlace())
+//        Weather: \(getWeather())
+//        Temperature: \(getTemperature()) Celsius
+//        Wind Speed: \(getWindSpeed()) m/s
+//        Cloudiness: \(getCloudiness()) percent coverage
+//    """)
+//    }
+    
+    func setDefaultData() {
+        weather = [
+            subWeather(id: 500, main: "Rain", description: "light rain")
+        ]
+        main = [
+            "temp": 303.25,
+            "feels_like": 301.3,
+            "temp_min": 280.15,
+            "temp_max": 304.15,
+            "pressure": 1014,
+            "humidity": 58
+        ]
+        visibility = 10000
+        wind = [
+            "speed": 3.0,
+            "deg": 90
+        ]
+        clouds = [
+            "all": 25
+        ]
+        name = "Lugar Nenhum"
     }
     
     func resetData() {
@@ -45,15 +78,15 @@ class WeatherData : Codable {
         name = nil
     }
     
-    func getPlace() -> String {
+    func getPlace() throws -> String {
         if let placeName = name {
             return placeName
         } else {
-            fatalError("No place information in memory!")
+            throw WeatherDataError.nilPlace
         }
     }
     
-    func getWeather() -> String {
+    func getWeather() throws -> String {
         if let weatherId = weather?[0].id {
             switch weatherId {
                 case 200...232:
@@ -72,55 +105,49 @@ class WeatherData : Codable {
                     return "Clear"
             }
         } else {
-            fatalError("No weather information in memory!")
+            throw WeatherDataError.nilWeather
         }
     }
     
     //Visibilidade em metros
-    func getVisibility() -> Int {
+    func getVisibility() throws -> Int {
         if let visibility = visibility {
             return visibility
         } else {
-            fatalError("No visibility information in memory!")
+            throw WeatherDataError.nilVisibility
         }
     }
     
     //Velocidade do vento em metros por segundo
-    func getWindSpeed() -> Float {
+    func getWindSpeed() throws -> Float {
         if let wind = wind?["speed"] {
             return wind
         } else {
-            fatalError("No wind information in memory!")
+            throw WeatherDataError.nilWind
         }
     }
     
     //Nuvens em percentual do céu coberto
-    func getCloudiness() -> Float {
+    func getCloudiness() throws -> Float {
         if let clouds = clouds?["all"] {
             return clouds
         } else {
-            fatalError("No cloud information in memory!")
+            throw WeatherDataError.nilCloudiness
         }
     }
     
-    func getCelsiusTemperature() -> Float {
-        if let kelvinTemp = main?["temp"] {
-            let celsiusTemp = kelvinTemp - 273.15
-            return celsiusTemp
+    func getTemperature(in format : String = WeatherData.shared.temperatureFormat) throws -> Float {
+        if let temp = main?["temp"] {
+            if format == "Celsius" {
+                let celsiusTemp = temp - 273.15
+                return celsiusTemp
+            } else {
+                let fahrenheitTemp = -459.67 + (9*temp)/5
+                return fahrenheitTemp
+            }
         } else {
-            fatalError("No cloud information in memory!")
+            throw WeatherDataError.nilTemperature
         }
-    }
-    
-    func getFahrenheitTemperature() -> Float {
-        if let kelvinTemp = main?["temp"] {
-            let fahrenheitTemp = -459.67 + (9*kelvinTemp)/5
-            return fahrenheitTemp
-        } else {
-            fatalError("No temperature information in memory!")
-        }
-        
-        
     }
     
 }
