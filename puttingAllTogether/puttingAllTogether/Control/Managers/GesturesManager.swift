@@ -29,7 +29,6 @@ class GesturesManager {
     private let swipeDownGesture  = UISwipeGestureRecognizer()
     private let swipeLeftGesture  = UISwipeGestureRecognizer()
     
-    //let audioManager = AudioManager.shared
     
     private init() {
         
