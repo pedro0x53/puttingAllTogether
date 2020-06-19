@@ -43,7 +43,6 @@ class GameplayController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tell()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -77,21 +76,6 @@ class GameplayController: UIViewController {
                 self.gameplay.overlay.isHidden = true
             })
         }
-    }
-}
-
-extension GameplayController: ManagerDelegate {
-    private func tell() {
-        print("Gameplay logic goes here...")
-        gestureManager.activateSwipes(gameplay: gameplay, gestures: .up, .right, .down, .left)
-    }
-    
-    func playerDidFinished() {
-        print("Audio Finished")
-    }
-    
-    func gestureRecognized() {
-        print("Gesture Recognized")
     }
 }
 
@@ -149,5 +133,39 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
     
     @objc private func exit() {
         print("Exit Selector")
+    }
+}
+
+extension GameplayController: ManagerDelegate {
+    private func tell(scene: Scene) {
+        print("Play scene audio")
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("Scene did finish")
+        checkSFX()
+        checkGestures()
+    }
+    
+    func playNextScene() {
+        print("Play next scene")
+        // tell(scene: chapterManger.currentScene)
+    }
+    
+    func gestureRecognized(gesture: GesturesType) {
+        print("Gesture Recognized")
+        playNextScene()
+    }
+    
+    func checkSFX() {
+        print("hasSFX")
+        print("play SFX")
+    }
+       
+    func checkGestures() {
+        print("hasGestures")
+        print("activate Gestures")
+        gestureManager.activateSwipes(gameplay: gameplay,
+                                      gestures: .up, .right, .down, .left)
     }
 }

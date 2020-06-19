@@ -15,7 +15,6 @@ class InitialController: UIViewController {
     let initial = Initial()
     
     let locationManager = CLLocationManager()
-    let weatherData = WeatherAPI()
     let audioManager = AudioManager.shared
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .initial)
@@ -39,7 +38,6 @@ class InitialController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways){
             locationManager.requestLocation()
         }
-        audioManager.delegate = self
         audioManager.play(player: .loop, urlString: "theInvestigation")
         
     }
@@ -137,9 +135,9 @@ extension InitialController : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            weatherData.setLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            weatherData.weatherRequestInfo()
-            weatherData.printAllInfo()
+            let weatherAPI = WeatherAPI()
+            weatherAPI.setLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            weatherAPI.weatherInfoRequest()
         }
     }
     
@@ -147,14 +145,4 @@ extension InitialController : CLLocationManagerDelegate {
         print("Error in getting location: Location Services probably disabled")
     }
     
-}
-
-extension InitialController: ManagerDelegate {
-    func gestureRecognized() {
-        print("Gesture Recognized")
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print(player)
-    }
 }
