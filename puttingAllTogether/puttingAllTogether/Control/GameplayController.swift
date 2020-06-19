@@ -18,8 +18,6 @@ class GameplayController: UIViewController {
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .gameplay)
     
-    var audioManager = AudioManager.shared
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
