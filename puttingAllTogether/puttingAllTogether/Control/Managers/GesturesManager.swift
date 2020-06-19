@@ -55,7 +55,6 @@ class GesturesManager {
     
     @objc private func swipeUp() {
         print("Swipe up recognized!")
-        //audioManager.play(player: .scene, urlString: "rain1")
     }
     
     @objc private func swipeRight() {
