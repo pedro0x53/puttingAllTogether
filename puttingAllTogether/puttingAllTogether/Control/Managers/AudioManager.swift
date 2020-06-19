@@ -121,11 +121,3 @@ class AudioManager {
         loop.play()
     }
 }
-<<<<<<< HEAD
-
-struct Audio {
-    let name: String
-    let group: String
-}
-=======
->>>>>>> b97935061c7b899182b8f784479653af57549820
