@@ -25,7 +25,6 @@ struct subWeather : Codable {
 
 class WeatherData : Codable {
     static var shared = WeatherData()
-    var temperatureFormat = "Celsius"
     
     var weather : Array<subWeather>?
     var main : Dictionary<String, Float>?
@@ -52,21 +51,16 @@ class WeatherData : Codable {
         ]
         main = [
             "temp": 303.25,
-            "feels_like": 301.3,
-            "temp_min": 280.15,
-            "temp_max": 304.15,
-            "pressure": 1014,
-            "humidity": 58
+            "feels_like": 301.3
         ]
         visibility = 10000
         wind = [
-            "speed": 3.0,
-            "deg": 90
+            "speed": 3.0
         ]
         clouds = [
             "all": 25
         ]
-        name = "Lugar Nenhum"
+        name = "Escuro"
     }
     
     func resetData() {
@@ -136,15 +130,10 @@ class WeatherData : Codable {
         }
     }
     
-    func getTemperature(in format : String = WeatherData.shared.temperatureFormat) throws -> Float {
+    func getTemperature() throws -> Float {
         if let temp = main?["temp"] {
-            if format == "Celsius" {
-                let celsiusTemp = temp - 273.15
-                return celsiusTemp
-            } else {
-                let fahrenheitTemp = -459.67 + (9*temp)/5
-                return fahrenheitTemp
-            }
+            let celsiusTemp = temp - 273.15
+            return celsiusTemp
         } else {
             throw WeatherDataError.nilTemperature
         }
