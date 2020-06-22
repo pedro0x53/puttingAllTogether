@@ -15,6 +15,30 @@ class WeatherDataTests: XCTestCase {
         WeatherData.shared.resetData()
     }
     
+    func test_weatherData_defaultData() {
+        //Given
+        WeatherData.shared.setDefaultData()
+        
+        //When
+        let name = WeatherData.shared.name
+        let weatherId = WeatherData.shared.weather?[0].id
+        let weatherName = WeatherData.shared.weather?[0].main
+        let temperature = WeatherData.shared.main?["temp"]
+        let wind = WeatherData.shared.wind?["speed"]
+        let clouds = WeatherData.shared.clouds?["all"]
+        let visibility = WeatherData.shared.visibility
+        
+        //Then
+        XCTAssertEqual(name, "Escuro")
+        XCTAssertEqual(weatherId, 500)
+        XCTAssertEqual(weatherName, "Rain")
+        XCTAssertEqual(temperature!, 303.25, accuracy: 0.01)
+        XCTAssertEqual(wind!, 3.0, accuracy: 0.01)
+        XCTAssertEqual(clouds, 25)
+        XCTAssertEqual(visibility, 10000)
+        
+    }
+    
     func test_weatherData_placeName_Fortaleza() {
         //Given
         WeatherData.shared.name = "Fortaleza"
@@ -143,36 +167,14 @@ class WeatherDataTests: XCTestCase {
         //Given
         WeatherData.shared.main = [
             "temp": 373.15,
-            "feels_like": 301.3,
-            "temp_min": 280.15,
-            "temp_max": 304.15,
-            "pressure": 1014,
-            "humidity": 58
+            "feels_like": 301.3
         ]
 
         //When
-        let temp = try! WeatherData.shared.getTemperature(in: "Celsius")
+        let temp = try! WeatherData.shared.getTemperature()
 
         //Then
         XCTAssertEqual(temp, 100, accuracy: 0.01)
-    }
-    
-    func test_weatherData_temperature_fahrenheitBoiling() {
-        //Given
-        WeatherData.shared.main = [
-            "temp": 373.15,
-            "feels_like": 301.3,
-            "temp_min": 280.15,
-            "temp_max": 304.15,
-            "pressure": 1014,
-            "humidity": 58
-        ]
-
-        //When
-        let temp = try! WeatherData.shared.getTemperature(in: "Fahrenheit")
-
-        //Then
-        XCTAssertEqual(temp, 212, accuracy: 0.01)
     }
     
     func test_weatherData_temperature_nil() {
@@ -189,8 +191,7 @@ class WeatherDataTests: XCTestCase {
     func test_weatherData_wind_100ms() {
         //Given
         WeatherData.shared.wind = [
-            "speed": 100,
-            "deg": 90
+            "speed": 100
         ]
         
         //When
