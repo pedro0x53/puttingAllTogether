@@ -12,13 +12,17 @@ import AVFoundation
 class GameplayController: UIViewController {
     
     private let gameplay: Gameplay = Gameplay.shared
-    private let gestureManager: GesturesManager = GesturesManager.shared
-    private let audioManager: AudioManager = AudioManager.shared
-    private let chapterManager: ChapterSceneManager = ChapterSceneManager.shared
+    public var state: Bool = false
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .gameplay)
     
-    public var state: Bool = false
+    private let chapterManager: ChapterSceneManager = ChapterSceneManager.shared
+    
+    private let audioManager: AudioManager = AudioManager.shared
+    private var playingSFX: Bool = false
+    private var SFXId: Int = 0
+    
+    private let gestureManager: GesturesManager = GesturesManager.shared
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -39,7 +43,6 @@ class GameplayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.gameplay.menu.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -153,28 +156,58 @@ extension GameplayController: ManagerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        checkSFX()
-        checkGestures()
+        if self.playingSFX {
+            if self.SFXId < self.chapterManager.currentScene.sfx.count - 1 {
+                self.SFXId += 1
+                playSFX()
+            } else {
+                self.SFXId = 0
+                self.playingSFX = false
+                checkGestures()
+            }
+        } else {
+            checkSFX()
+        }
     }
     
-    func playNextScene() {
-        self.chapterManager.getNextScene()
-        tell(scene: self.chapterManager.currentScene)
+    func playNextScene(plus: Int = 1) {
+        if self.chapterManager.currentChapter.lastChapter {
+            //Credits on the roll
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.chapterManager.updateScene(plus: plus)
+            tell(scene: self.chapterManager.currentScene)
+        }
     }
     
-    func gestureRecognized(gesture: GesturesType) {
-        self.gestureManager.deactivateSwipes(gameplay: self.gameplay,
-                                             gestures: .up, .right, .down, .left)
-        playNextScene()
+    func playSFX() {
+        let sfx = self.chapterManager.currentScene.sfx[self.SFXId]
+        let channel = sfx.channel
+        self.audioManager.play(player: .sfx, urlString: sfx.audioURL, channel: channel)
     }
     
     func checkSFX() {
         if self.chapterManager.currentScene.hasSFX {
             if self.chapterManager.currentScene.sfx.count > 0 {
-                let sfx = self.chapterManager.currentScene.sfx[0]
-                self.audioManager.play(player: .sfx, urlString: sfx.audioURL)
+                self.playingSFX = true
+                playSFX()
             }
+        } else {
+            checkGestures()
         }
+    }
+    
+    func gestureRecognized(gesture: GesturesType) {
+        self.gestureManager.deactivateSwipes(gameplay: self.gameplay,
+                                             gestures: .up, .right, .down, .left)
+        
+        let gestures = self.chapterManager.currentScene.gestures
+        var incrementer = 1
+        if let index = gestures.firstIndex(of: gesture.rawValue) {
+            incrementer = self.chapterManager.currentScene.nextSceneIncrementer[index]
+        }
+        
+        playNextScene(plus: incrementer)
     }
        
     func checkGestures() {
@@ -197,6 +230,8 @@ extension GameplayController: ManagerDelegate {
                     break
                 }
             }
+        } else {
+            playNextScene()
         }
     }
 }

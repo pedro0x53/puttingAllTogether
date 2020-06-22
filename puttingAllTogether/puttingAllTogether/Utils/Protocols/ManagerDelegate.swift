@@ -12,6 +12,6 @@ import AVFoundation
 protocol ManagerDelegate: UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
     func checkSFX()
     func checkGestures()
-    func playNextScene()
+    func playNextScene(plus: Int)
     func gestureRecognized(gesture: GesturesType)
 }

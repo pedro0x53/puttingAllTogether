@@ -1,13 +1,15 @@
 {
-    "chapterID": 0,
+    "chapterID": 1,
     "scenes": [
         {
             "sceneID": 0,
-            "audioURL": "theInvestigation",
+            "audioURL": "mission",
+            "hasSFX": false,
+            "sfx": [],
             "hasGestures": false,
             "gestures": [],
-            "hasSFX": false,
-            "sfx": []
-        }
-    ]
+            "nextSceneIncrementer": []
+        },
+    ],
+    "lastChapter": true
 }

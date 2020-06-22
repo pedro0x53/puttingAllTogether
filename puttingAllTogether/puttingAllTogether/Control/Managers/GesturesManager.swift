@@ -53,22 +53,18 @@ class GesturesManager {
     }
     
     @objc private func swipeUp() {
-        print("Swipe up recognized!")
         delegate?.gestureRecognized(gesture: .up)
     }
     
     @objc private func swipeRight() {
-        print("Swipe right recognized!")
         delegate?.gestureRecognized(gesture: .right)
     }
     
     @objc private func swipeDown() {
-        print("Swipe down recognized!")
         delegate?.gestureRecognized(gesture: .down)
     }
     
     @objc private func swipeLeft() {
-        print("Swipe left recognized!")
         delegate?.gestureRecognized(gesture: .left)
     }
     

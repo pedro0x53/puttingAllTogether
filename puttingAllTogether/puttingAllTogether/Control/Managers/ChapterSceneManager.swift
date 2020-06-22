@@ -11,29 +11,14 @@ import Foundation
 class ChapterSceneManager{
     
     public static let shared: ChapterSceneManager = ChapterSceneManager()
-    
-    private var chapter: Chapter? {
-        didSet {
-            if let chapter = self.chapter {
-                currentChapter = chapter
-            }
-        }
-    }
+
     public var currentChapter: Chapter!
-    
-    private var scene: Scene? {
-        didSet {
-            if let scene = self.scene {
-                currentScene = scene
-            }
-        }
-    }
     public var currentScene: Scene!
     
     init() {
         //let save = StoreManager.getLastSave()
         currentChapter = getChapter(id: 0)
-        currentScene = currentChapter?.scenes[0]
+        currentScene = currentChapter.scenes[0]
     }
     
     private func readLocalFile(forName name: String) -> Data? {
@@ -60,18 +45,15 @@ class ChapterSceneManager{
         }
     }
     
-    
-    
     private func getChapter(id: Int) -> Chapter? {
         var res: Chapter?
-        //data is feeding from only one json
+        
         if let data = readLocalFile(forName: "chapter\(id)") {
             do {
                 let chapter = try JSONDecoder().decode(Chapter.self, from: data)
                     if chapter.chapterID == id {
                         res = chapter
                     }
-                
             } catch {
                 fatalError("""
                     Unable to decode chapter.
@@ -83,12 +65,14 @@ class ChapterSceneManager{
         return res
     }
 
-    public func getNextScene() {
-        if self.currentScene.sceneID < currentChapter.scenes.count - 1 {
-            self.currentScene = self.currentChapter.scenes[currentScene.sceneID + 1]
+    public func updateScene(plus: Int = 1) {
+        if (self.currentScene.sceneID + plus) <= (currentChapter.scenes.count - 1) {
+            self.currentScene = self.currentChapter.scenes[currentScene.sceneID + plus]
         } else {
-            self.chapter = getChapter(id: currentChapter.chapterID + 1)!
-            self.currentScene = self.currentChapter.scenes[0]
+            if let chapter = getChapter(id: currentChapter.chapterID + 1) {
+                self.currentChapter = chapter
+                self.currentScene = self.currentChapter.scenes[currentScene.sceneID - plus - 1]
+            }
         }
     }
 }

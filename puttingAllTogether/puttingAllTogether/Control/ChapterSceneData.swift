@@ -6,27 +6,24 @@
 //  Copyright © 2020 Brabo. All rights reserved.
 //
 import Foundation
+
 struct Chapter: Codable{
     let chapterID: Int
-    var scenes: [Scene]
+    let scenes: [Scene]
+    let lastChapter: Bool
 }
+
 struct Scene: Codable {
     let sceneID: Int
     let audioURL: String
-    let hasGestures: Bool
-    let gestures: [String]
     let hasSFX: Bool
     let sfx: [SFX]
+    let hasGestures: Bool
+    let gestures: [String]
+    let nextSceneIncrementer: [Int]
 }
 
 struct SFX: Codable{
     let audioURL: String
-    let options: sfxOptions
-}
-struct sfxOptions: Codable{
     let channel: String
-    let volume: Double
 }
-
-
-
