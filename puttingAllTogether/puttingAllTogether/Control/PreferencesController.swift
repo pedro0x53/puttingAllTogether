@@ -11,6 +11,7 @@ import AVFoundation
 
 class PreferencesController: UIViewController {
     //preferences view
+    
     var preferences = Preferences()
     var audioManager = AudioManager.shared
     

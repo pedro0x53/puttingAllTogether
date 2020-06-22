@@ -18,6 +18,8 @@ class GameplayController: UIViewController {
     
     public static var menu: [MenuItem] = MenuManager.getMenu(type: .gameplay)
     
+    public var state: Bool = false
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -44,7 +46,11 @@ class GameplayController: UIViewController {
         super.viewDidAppear(animated)
         gestureManager.delegate = self
         audioManager.delegate = self
-        tell(scene: chapterManager.currentScene)
+        
+        if(state == false) {
+            tell(scene: chapterManager.currentScene)
+        }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -59,10 +65,12 @@ class GameplayController: UIViewController {
     
     func pausePlayers() {
         audioManager.pause()
+        state = true
     }
     
     func resumePlayers() {
         audioManager.resume()
+        state = false
     }
     
     @objc public func callMenu(pinch: UIPinchGestureRecognizer) {

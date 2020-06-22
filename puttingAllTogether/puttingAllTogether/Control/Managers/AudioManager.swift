@@ -19,6 +19,7 @@ class AudioManager {
     
     public static let shared: AudioManager = AudioManager()
     public var delegate: ManagerDelegate?
+    
     private var sfx: AVAudioPlayer
     public var sfxVolume: Float = 0.5 {
         didSet {
@@ -32,7 +33,7 @@ class AudioManager {
         }
     }
     private var loop: AVAudioPlayer
-    public var loopVolume: Float = 0.5{
+    public var loopVolume: Float = 0.5 {
         didSet {
             loop.volume = loopVolume
         }
@@ -43,7 +44,6 @@ class AudioManager {
         scene = AVAudioPlayer()
         loop = AVAudioPlayer()
     }
-    
     
     func play(player: PlayerType, urlString: String) {
         
@@ -67,6 +67,7 @@ class AudioManager {
                     do {
                         sfx = try AVAudioPlayer(contentsOf: url)
                         sfx.play()
+                        sfx.volume = sfxVolume
                     }
                     catch {
                         print("""
@@ -80,6 +81,7 @@ class AudioManager {
                         scene = try AVAudioPlayer(contentsOf: url)
                         scene.delegate = delegate
                         scene.play()
+                        scene.volume = sceneVolume
                     }
                     catch {
                         print("""
@@ -91,6 +93,7 @@ class AudioManager {
                     do {
                         loop = try AVAudioPlayer(contentsOf: url)
                         loop.play()
+                        loop.volume = loopVolume
                     }
                     catch {
                         print("""
@@ -112,12 +115,16 @@ class AudioManager {
     func pause() {
         sfx.pause()
         scene.pause()
-        loop.pause()
+        if loop.volume > 0.0 {
+            loop.volume += 0.2
+        }
     }
     
     func resume() {
         sfx.play()
         scene.play()
-        loop.play()
+        if loop.volume > 0.0 {
+            loop.volume -= 0.2
+        }
     }
 }
