@@ -27,21 +27,24 @@ class AudioManager {
     public var delegate: ManagerDelegate?
     
     private var sfx: AVAudioPlayer
-    public var sfxVolume: Float = 0.5 {
+    public var sfxVolume: Float = UserDefaults.standard.float(forKey: "sfxVolume") {
         didSet {
             sfx.volume = sfxVolume
+            UserDefaults.standard.set(sfxVolume, forKey: "sfxVolume")
         }
     }
     private var scene: AVAudioPlayer
-    public var sceneVolume: Float = 0.5 {
+    public var sceneVolume: Float = UserDefaults.standard.float(forKey: "sceneVolume") {
         didSet {
             scene.volume = sceneVolume
+            UserDefaults.standard.set(sceneVolume, forKey: "sceneVolume")
         }
     }
     private var loop: AVAudioPlayer
-    public var loopVolume: Float = 0.5 {
+    public var loopVolume: Float = UserDefaults.standard.float(forKey: "loopVolume") {
         didSet {
             loop.volume = loopVolume
+            UserDefaults.standard.set(loopVolume, forKey: "loopVolume")
         }
     }
     
@@ -49,6 +52,18 @@ class AudioManager {
         sfx = AVAudioPlayer()
         scene = AVAudioPlayer()
         loop = AVAudioPlayer()
+        
+        if sfxVolume == 0 {
+            sfxVolume = 0.5
+        }
+        
+        if sceneVolume == 0 {
+            sceneVolume = 0.5
+        }
+        
+        if loopVolume == 0 {
+            loopVolume = 0.5
+        }
     }
     
     func play(player: PlayerType, urlString: String, channel: String = Channel.booth.rawValue) {
