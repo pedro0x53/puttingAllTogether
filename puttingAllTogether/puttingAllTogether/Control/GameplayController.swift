@@ -43,6 +43,10 @@ class GameplayController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        Uncomment these lines to reset the User Deafaults save
+//        UserDefaults.standard.set(0, forKey: "chapterId")
+//        UserDefaults.standard.set(0, forKey: "sceneId")
     }
     
     override func viewDidAppear(_ animated: Bool) {
