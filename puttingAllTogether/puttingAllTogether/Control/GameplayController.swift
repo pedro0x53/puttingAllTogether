@@ -177,6 +177,8 @@ extension GameplayController: ManagerDelegate {
     func playNextScene(plus: Int = 1) {
         if self.chapterManager.currentChapter.lastChapter {
             //Credits on the roll
+            UserDefaults.standard.set(0, forKey: "chapterId")
+            UserDefaults.standard.set(0, forKey: "sceneId")
             self.navigationController?.popViewController(animated: true)
         } else {
             self.chapterManager.updateScene(plus: plus)
