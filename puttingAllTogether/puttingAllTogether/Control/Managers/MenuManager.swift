@@ -17,7 +17,7 @@ public class MenuManager {
     public static func getMenu(type: MenuType) -> [MenuItem] {
         switch type {
         case .initial:
-            return [MenuItem(icon: "play_icon", label: "Start",
+            return [MenuItem(icon: "play_icon", label: "Jogar",
                              action: .start),
                     MenuItem(icon: "settings_icon", label: "Preferências",
                              action: .preferences),

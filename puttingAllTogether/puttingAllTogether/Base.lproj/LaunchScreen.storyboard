@@ -18,21 +18,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg" translatesAutoresizingMaskIntoConstraints="NO" id="u14-3Q-T3A">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abulia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-HI-zx9">
-                                <rect key="frame" x="183.33333333333334" y="438" width="47.333333333333343" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="b4x-HI-zx9" firstAttribute="centerY" secondItem="u14-3Q-T3A" secondAttribute="centerY" id="A5i-bU-hnR"/>
                             <constraint firstItem="u14-3Q-T3A" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-44" id="EaI-Ut-7pY"/>
                             <constraint firstItem="u14-3Q-T3A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hbr-aw-Ocw"/>
                             <constraint firstItem="u14-3Q-T3A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QHc-ot-Jt3"/>
                             <constraint firstItem="u14-3Q-T3A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="f9e-Mx-cQ7"/>
-                            <constraint firstItem="b4x-HI-zx9" firstAttribute="centerX" secondItem="u14-3Q-T3A" secondAttribute="centerX" id="kjt-tO-EPY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

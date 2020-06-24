@@ -11,14 +11,38 @@ import Foundation
 class ChapterSceneManager{
     
     public static let shared: ChapterSceneManager = ChapterSceneManager()
+    
+//    private let storage: StorageManager = StorageManager.shared
+    private let ud = UserDefaults.standard
 
-    public var currentChapter: Chapter!
-    public var currentScene: Scene!
+    public var currentChapter: Chapter! {
+        didSet {
+            ud.set(currentChapter.chapterID, forKey: "chapterId")
+        }
+    }
+    public var currentScene: Scene! {
+        didSet {
+            ud.set(currentScene.sceneID, forKey: "sceneId")
+        }
+    }
     
     init() {
-        //let save = StoreManager.getLastSave()
-        currentChapter = getChapter(id: 0)
-        currentScene = currentChapter.scenes[0]
+        if ud.object(forKey: "chapterId") != nil {
+            let chapterId = ud.integer(forKey: "chapterId")
+            let sceneId = ud.integer(forKey: "sceneId")
+            
+            currentChapter = getChapter(id: chapterId)
+            
+            if sceneId > currentChapter.scenes.count - 1 {
+                currentScene = currentChapter.scenes[0]
+            } else {
+                currentScene = currentChapter.scenes[sceneId]
+            }
+        } else {
+            print("First Log")
+            currentChapter = getChapter(id: 0)
+            currentScene = currentChapter.scenes[0]
+        }
     }
     
     private func readLocalFile(forName name: String) -> Data? {

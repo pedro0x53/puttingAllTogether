@@ -12,6 +12,18 @@ class Initial: UIView {
     
     let bkg: UIImageView = UIImageView(image: UIImage(named: "bkg"))
     let menu: Menu = Menu()
+    let menuTitle: UILabel = {
+        let lbl = UILabel()
+            lbl.text = "Abulia"
+            lbl.font = UIFont.systemFont(ofSize: 100)
+            lbl.layer.shadowColor = UIColor.usafaBlue.cgColor
+            lbl.layer.shadowRadius = 5.0
+            lbl.layer.shadowOpacity = 5.0
+            lbl.layer.shadowOffset = CGSize(width: 4, height: 4)
+            lbl.layer.masksToBounds = false
+            lbl.textColor = .dodgerBlue
+        return lbl
+        }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +33,15 @@ class Initial: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public static let labelAnimation: CAKeyframeAnimation = {
+        let animation = CAKeyframeAnimation(keyPath: "opacity")
+            animation.values = [0.9, 0.3, 0.9]
+            animation.keyTimes = [0, 0.5, 1]
+            animation.repeatCount = Float.infinity
+            animation.duration = 4
+        return animation
+    }()
     
     private func setupLayout() {
         self.addSubview(bkg)
@@ -36,6 +57,12 @@ class Initial: UIView {
         menu.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         menu.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         menu.heightAnchor.constraint(equalToConstant: 350).isActive = true
-        menu.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        menu.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40).isActive = true
+        
+        self.addSubview(menuTitle)
+        menuTitle.translatesAutoresizingMaskIntoConstraints = false
+        menuTitle.bottomAnchor.constraint(equalTo: menu.topAnchor, constant: -10).isActive = true
+        menuTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        menuTitle.layer.add(Initial.labelAnimation, forKey: "labelAnimation")
     }
 }
