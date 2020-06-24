@@ -13,6 +13,7 @@ public enum PlayerType {
     case sfx
     case scene
     case loop
+    case helper
 }
 
 public enum Channel: String {
@@ -47,11 +48,19 @@ class AudioManager {
             UserDefaults.standard.set(loopVolume, forKey: "loopVolume")
         }
     }
+    private var helper: AVAudioPlayer
+    public var helperVolume: Float = UserDefaults.standard.float(forKey: "helperVolume") {
+        didSet {
+            helper.volume = helperVolume
+            UserDefaults.standard.set(helperVolume, forKey: "helperVolume")
+        }
+    }
     
     private init() {
         sfx = AVAudioPlayer()
         scene = AVAudioPlayer()
         loop = AVAudioPlayer()
+        helper = AVAudioPlayer()
         
         if sfxVolume == 0 {
             sfxVolume = 0.5
@@ -63,6 +72,10 @@ class AudioManager {
         
         if loopVolume == 0 {
             loopVolume = 0.5
+        }
+        
+        if helperVolume == 0 {
+            helperVolume = 0.5
         }
     }
     
@@ -118,11 +131,22 @@ class AudioManager {
                         loop = try AVAudioPlayer(contentsOf: url)
                         loop.play()
                         loop.volume = loopVolume
-                        setChannel(player: loop, channel: channel)
                     }
                     catch {
                         print("""
                             Error: Failed to play Loop audio.
+                            \(error.localizedDescription)
+                        """)
+                    }
+                case .helper:
+                    do {
+                        helper = try AVAudioPlayer(contentsOf: url)
+                        helper.play()
+                        helper.volume = loopVolume
+                    }
+                    catch {
+                        print("""
+                            Error: Failed to play helper audio.
                             \(error.localizedDescription)
                         """)
                     }
@@ -140,6 +164,7 @@ class AudioManager {
     func pause() {
         sfx.pause()
         scene.pause()
+        helper.pause()
         if loop.volume > 0.0 {
             loop.volume += 0.2
         }
@@ -148,6 +173,7 @@ class AudioManager {
     func resume() {
         sfx.play()
         scene.play()
+        helper.play()
         if loop.volume > 0.0 {
             loop.volume -= 0.2
         }

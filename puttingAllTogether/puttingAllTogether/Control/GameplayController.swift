@@ -73,11 +73,13 @@ class GameplayController: UIViewController {
     func pausePlayers() {
         audioManager.pause()
         state = true
+        audioManager.play(player: .helper, urlString: "pause_feedback")
     }
     
     func resumePlayers() {
         audioManager.resume()
         state = false
+        audioManager.play(player: .helper, urlString: "resume_feedback")
     }
     
     @objc public func callMenu(pinch: UIPinchGestureRecognizer) {
@@ -177,6 +179,9 @@ extension GameplayController: ManagerDelegate {
     func playNextScene(plus: Int = 1) {
         if self.chapterManager.currentChapter.lastChapter {
             //Credits on the roll
+            UserDefaults.standard.set(0, forKey: "chapterId")
+            UserDefaults.standard.set(0, forKey: "sceneId")
+            audioManager.play(player: .helper, urlString: "gameover_feedback")
             self.navigationController?.popViewController(animated: true)
         } else {
             self.chapterManager.updateScene(plus: plus)
@@ -202,6 +207,7 @@ extension GameplayController: ManagerDelegate {
     }
     
     func gestureRecognized(gesture: GesturesType) {
+        audioManager.play(player: .helper, urlString: "gesture_2_feedback")
         self.gestureManager.deactivateSwipes(gameplay: self.gameplay,
                                              gestures: .up, .right, .down, .left)
         
@@ -234,6 +240,7 @@ extension GameplayController: ManagerDelegate {
                     break
                 }
             }
+            audioManager.play(player: .helper, urlString: "gesture_1_feedback")
         } else {
             playNextScene()
         }
