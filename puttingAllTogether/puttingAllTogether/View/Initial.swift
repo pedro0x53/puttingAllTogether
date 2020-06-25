@@ -14,8 +14,8 @@ class Initial: UIView {
     let menu: Menu = Menu()
     let menuTitle: UILabel = {
         let lbl = UILabel()
-            lbl.text = "Abulia"
-            lbl.font = UIFont.systemFont(ofSize: 100)
+            lbl.text = "ABULIA"
+            lbl.font = UIFont(name: "CoveredByYourGrace", size: 100)
             lbl.layer.shadowColor = UIColor.usafaBlue.cgColor
             lbl.layer.shadowRadius = 5.0
             lbl.layer.shadowOpacity = 5.0

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Este aplicativo utiliza sua localização para consultar o clima local e representar isso durante o jogo</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -50,6 +52,10 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CoveredByYouGrace.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

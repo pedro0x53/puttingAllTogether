@@ -12,6 +12,7 @@
 		6E0A2DF82497BAA7002307BE /* ChapterSceneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2DF72497BAA7002307BE /* ChapterSceneData.swift */; };
 		6E486D95249B9B80006BB075 /* chapter0.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E486D94249B9B80006BB075 /* chapter0.json */; };
 		6E486D97249BA248006BB075 /* ChapterSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E486D96249BA248006BB075 /* ChapterSceneManager.swift */; };
+		6EB707FB24A4DDB200213793 /* CoveredByYouGrace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EB707FA24A4D30600213793 /* CoveredByYouGrace.ttf */; };
 		92436B5024A37433002B24B3 /* MenuManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92436B4F24A37433002B24B3 /* MenuManagerTest.swift */; };
 		924C85182489136000E2CB1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85172489136000E2CB1E /* WeatherAPI.swift */; };
 		924C851A2489138700E2CB1E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C85192489138700E2CB1E /* WeatherData.swift */; };
@@ -71,6 +72,7 @@
 		6E0A2DF72497BAA7002307BE /* ChapterSceneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChapterSceneData.swift; path = puttingAllTogether/Control/ChapterSceneData.swift; sourceTree = SOURCE_ROOT; };
 		6E486D94249B9B80006BB075 /* chapter0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chapter0.json; sourceTree = "<group>"; };
 		6E486D96249BA248006BB075 /* ChapterSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterSceneManager.swift; sourceTree = "<group>"; };
+		6EB707FA24A4D30600213793 /* CoveredByYouGrace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoveredByYouGrace.ttf; sourceTree = "<group>"; };
 		92436B4F24A37433002B24B3 /* MenuManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManagerTest.swift; sourceTree = "<group>"; };
 		924C85172489136000E2CB1E /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = SOURCE_ROOT; };
 		924C85192489138700E2CB1E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = SOURCE_ROOT; };
@@ -147,6 +149,14 @@
 			path = Chapters;
 			sourceTree = "<group>";
 		};
+		6EB707F524A39B2300213793 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6EB707FA24A4D30600213793 /* CoveredByYouGrace.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FE2A643324979FD80034637F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 		FEE853A424868F260063B3F6 /* puttingAllTogether */ = {
 			isa = PBXGroup;
 			children = (
+				6EB707F524A39B2300213793 /* Fonts */,
 				FFD440402497BBA100C97FC7 /* Audios */,
 				FEE853D924868F710063B3F6 /* Model */,
 				FEE853DA24868F7A0063B3F6 /* View */,
@@ -413,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB707FB24A4DDB200213793 /* CoveredByYouGrace.ttf in Resources */,
 				FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */,
 				FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */,
 				FFD440422497BBC200C97FC7 /* steps1.mp3 in Resources */,
