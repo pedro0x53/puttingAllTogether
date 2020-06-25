@@ -74,6 +74,8 @@ extension InitialController: UICollectionViewDelegate, UICollectionViewDataSourc
             break
         case .preferences:
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(preferences)))
+        case .credits:
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(credits)))
         case .exit:
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exit)))
         }
@@ -87,6 +89,11 @@ extension InitialController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     @objc private func preferences() {
         let controller = PreferencesController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func credits() {
+        let controller = CreditsController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

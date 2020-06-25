@@ -21,13 +21,17 @@ public class MenuManager {
                              action: .start),
                     MenuItem(icon: "settings_icon", label: "Preferências",
                              action: .preferences),
-                MenuItem(icon: "exit_icon", label: "Sair",
+                    MenuItem(icon: "tm_icon", label: "Créditos",
+                             action: .credits),
+                    MenuItem(icon: "exit_icon", label: "Sair",
                          action: .exit)]
         case .gameplay:
             return [MenuItem(icon: "play_icon", label: "Resume",
                              action: .resume),
                     MenuItem(icon: "settings_icon", label: "Preferências",
                              action: .preferences),
+                    MenuItem(icon: "tm_icon", label: "Créditos",
+                             action: .credits),
                     MenuItem(icon: "exit_icon", label: "Sair",
                              action: .exit)]
         }

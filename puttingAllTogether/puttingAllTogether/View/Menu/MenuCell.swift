@@ -12,6 +12,7 @@ public enum Actions {
     case start
     case resume
     case preferences
+    case credits
     case exit
 }
 

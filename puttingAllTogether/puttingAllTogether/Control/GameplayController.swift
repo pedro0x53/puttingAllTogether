@@ -121,6 +121,8 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resume)))
         case .preferences:
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(preferences)))
+        case .credits:
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(credits)))
         case .exit:
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exit)))
         }
@@ -147,6 +149,11 @@ extension GameplayController: UICollectionViewDelegate, UICollectionViewDataSour
     
     @objc private func preferences() {
         let controller = PreferencesController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func credits() {
+        let controller = CreditsController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -178,11 +185,12 @@ extension GameplayController: ManagerDelegate {
     
     func playNextScene(plus: Int = 1) {
         if self.chapterManager.currentChapter.lastChapter {
-            //Credits on the roll
             UserDefaults.standard.set(0, forKey: "chapterId")
             UserDefaults.standard.set(0, forKey: "sceneId")
             audioManager.play(player: .helper, urlString: "gameover_feedback")
-            self.navigationController?.popViewController(animated: true)
+            
+            let controller = CreditsController()
+            self.navigationController?.pushViewController(controller, animated: true)
         } else {
             self.chapterManager.updateScene(plus: plus)
             tell(scene: self.chapterManager.currentScene)
