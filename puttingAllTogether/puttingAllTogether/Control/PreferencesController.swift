@@ -46,7 +46,7 @@ class PreferencesController: UIViewController {
     
     @objc func didSlideSliderGeneral(_ slider: UISlider) {
         let value = slider.value
-        audioManager.sfxVolume = value
+        audioManager.loopVolume = value
     }
     
     @objc func didSlideSliderDubbing(_ slider: UISlider) {
@@ -56,6 +56,6 @@ class PreferencesController: UIViewController {
     
     @objc func didSlideSliderEffects(_ slider: UISlider) {
         let value = slider.value
-        audioManager.loopVolume = value
+        audioManager.sfxVolume = value
     }
 }

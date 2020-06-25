@@ -81,7 +81,7 @@ class AudioManager {
     
     func play(player: PlayerType, urlString: String, channel: String = Channel.booth.rawValue) {
         
-        
+
         let urlBundle = Bundle.main.path(forResource: urlString, ofType: "mp3")
                 
             do {

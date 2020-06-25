@@ -55,6 +55,7 @@ class GameplayController: UIViewController {
         audioManager.delegate = self
         
         if(state == false) {
+            audioManager.play(player: .loop, urlString: chapterManager.currentChapter.scenaryURL)
             tell(scene: chapterManager.currentScene)
         }
         
@@ -73,13 +74,13 @@ class GameplayController: UIViewController {
     func pausePlayers() {
         audioManager.pause()
         state = true
-        audioManager.play(player: .helper, urlString: "pause_feedback")
+        audioManager.play(player: .helper, urlString: "GUI_Notification-02")
     }
     
     func resumePlayers() {
         audioManager.resume()
         state = false
-        audioManager.play(player: .helper, urlString: "resume_feedback")
+        audioManager.play(player: .helper, urlString: "GUI_Notification-02")
     }
     
     @objc public func callMenu(pinch: UIPinchGestureRecognizer) {
@@ -185,6 +186,10 @@ extension GameplayController: ManagerDelegate {
             self.navigationController?.popViewController(animated: true)
         } else {
             self.chapterManager.updateScene(plus: plus)
+            if !((self.chapterManager.currentScene.sceneID + plus) <= (chapterManager.currentChapter.scenes.count - 1)) {
+                audioManager.play(player: .loop, urlString: chapterManager.currentChapter.scenaryURL)
+            }
+            
             tell(scene: self.chapterManager.currentScene)
         }
     }

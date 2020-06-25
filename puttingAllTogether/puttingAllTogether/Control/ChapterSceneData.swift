@@ -11,6 +11,7 @@ struct Chapter: Codable{
     let chapterID: Int
     let scenes: [Scene]
     let lastChapter: Bool
+    let scenaryURL: String
 }
 
 struct Scene: Codable {
