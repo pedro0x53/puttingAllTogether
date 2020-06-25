@@ -40,7 +40,54 @@
 		FEFA4BCF24A0EFCB009B3059 /* mission.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */; };
 		FEFA4BD024A0EFCB009B3059 /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */; };
 		FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */; };
-		FFD440422497BBC200C97FC7 /* steps1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440412497BBC200C97FC7 /* steps1.mp3 */; };
+		FF7EEA1924A4D1790045C5EA /* Closing door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1124A4D1780045C5EA /* Closing door 01.mp3 */; };
+		FF7EEA1A24A4D1790045C5EA /* Lock and unlock door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1224A4D1780045C5EA /* Lock and unlock door 01.mp3 */; };
+		FF7EEA1B24A4D1790045C5EA /* Opening door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1324A4D1780045C5EA /* Opening door 01.mp3 */; };
+		FF7EEA1C24A4D1790045C5EA /* Open and closing 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1424A4D1780045C5EA /* Open and closing 01.mp3 */; };
+		FF7EEA1D24A4D1790045C5EA /* Knocking on door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1524A4D1780045C5EA /* Knocking on door 01.mp3 */; };
+		FF7EEA1E24A4D1790045C5EA /* Elevator open and close 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1624A4D1780045C5EA /* Elevator open and close 02.mp3 */; };
+		FF7EEA1F24A4D1790045C5EA /* Elevator open and close 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1724A4D1780045C5EA /* Elevator open and close 01.mp3 */; };
+		FF7EEA2024A4D1790045C5EA /* Chainlock 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1824A4D1790045C5EA /* Chainlock 01.mp3 */; };
+		FF7EEA2524A4D1870045C5EA /* Falling stones 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2224A4D1860045C5EA /* Falling stones 01.mp3 */; };
+		FF7EEA2624A4D1870045C5EA /* Stone crash 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2324A4D1860045C5EA /* Stone crash 02.mp3 */; };
+		FF7EEA2724A4D1870045C5EA /* Stone crash 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2424A4D1860045C5EA /* Stone crash 01.mp3 */; };
+		FF7EEA2F24A4D18F0045C5EA /* Wind with shutter banging 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2924A4D18F0045C5EA /* Wind with shutter banging 01.mp3 */; };
+		FF7EEA3024A4D18F0045C5EA /* Heavy wind 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2A24A4D18F0045C5EA /* Heavy wind 01.mp3 */; };
+		FF7EEA3124A4D18F0045C5EA /* Heavy and howling wind 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2B24A4D18F0045C5EA /* Heavy and howling wind 01.mp3 */; };
+		FF7EEA3224A4D18F0045C5EA /* Strong wind with rain 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2C24A4D18F0045C5EA /* Strong wind with rain 01.mp3 */; };
+		FF7EEA3324A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2D24A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 */; };
+		FF7EEA3424A4D18F0045C5EA /* Wind blowing through trees 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA2E24A4D18F0045C5EA /* Wind blowing through trees 01.mp3 */; };
+		FF7EEA3B24A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA3624A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 */; };
+		FF7EEA3C24A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA3724A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 */; };
+		FF7EEA3D24A4D1940045C5EA /* Close thunder with rain 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA3824A4D1940045C5EA /* Close thunder with rain 01.mp3 */; };
+		FF7EEA3E24A4D1940045C5EA /* Loud thunder crap 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA3924A4D1940045C5EA /* Loud thunder crap 01.mp3 */; };
+		FF7EEA3F24A4D1940045C5EA /* Loud thunder crap 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA3A24A4D1940045C5EA /* Loud thunder crap 02.mp3 */; };
+		FF7EEA4924A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4124A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 */; };
+		FF7EEA4A24A4D19A0045C5EA /* Steps on hollow room 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4224A4D19A0045C5EA /* Steps on hollow room 01.mp3 */; };
+		FF7EEA4B24A4D19A0045C5EA /* Steps on hollow room 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4324A4D19A0045C5EA /* Steps on hollow room 02.mp3 */; };
+		FF7EEA4C24A4D19A0045C5EA /* Messy steps through leaves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4424A4D19A0045C5EA /* Messy steps through leaves.mp3 */; };
+		FF7EEA4D24A4D19A0045C5EA /* Steps through leaves 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4524A4D19A0045C5EA /* Steps through leaves 01.mp3 */; };
+		FF7EEA4E24A4D19A0045C5EA /* Steps on forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4624A4D19A0045C5EA /* Steps on forest.mp3 */; };
+		FF7EEA4F24A4D19A0045C5EA /* Steps climbing stairs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4724A4D19A0045C5EA /* Steps climbing stairs.mp3 */; };
+		FF7EEA5024A4D19A0045C5EA /* Steps on wood floor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA4824A4D19A0045C5EA /* Steps on wood floor.mp3 */; };
+		FF7EEA5824A4D1A20045C5EA /* Stream 03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5224A4D1A20045C5EA /* Stream 03.mp3 */; };
+		FF7EEA5924A4D1A20045C5EA /* Stream 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5324A4D1A20045C5EA /* Stream 02.mp3 */; };
+		FF7EEA5A24A4D1A20045C5EA /* Stream 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5424A4D1A20045C5EA /* Stream 01.mp3 */; };
+		FF7EEA5B24A4D1A20045C5EA /* Stream 05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5524A4D1A20045C5EA /* Stream 05.mp3 */; };
+		FF7EEA5C24A4D1A20045C5EA /* Stream 04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5624A4D1A20045C5EA /* Stream 04.mp3 */; };
+		FF7EEA5D24A4D1A20045C5EA /* Stream 06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5724A4D1A20045C5EA /* Stream 06.mp3 */; };
+		FF7EEA6324A4D1A90045C5EA /* Dragon hoar 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA5F24A4D1A90045C5EA /* Dragon hoar 01.mp3 */; };
+		FF7EEA6424A4D1A90045C5EA /* Monster growl 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6024A4D1A90045C5EA /* Monster growl 01.mp3 */; };
+		FF7EEA6524A4D1A90045C5EA /* Monster chewing bones 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6124A4D1A90045C5EA /* Monster chewing bones 01.mp3 */; };
+		FF7EEA6624A4D1A90045C5EA /* Monster roar 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6224A4D1A90045C5EA /* Monster roar 01.mp3 */; };
+		FF7EEA7024A4D1AF0045C5EA /* GUI_Select_11 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6824A4D1AF0045C5EA /* GUI_Select_11 1.wav */; };
+		FF7EEA7124A4D1AF0045C5EA /* GUI_Swipe 01 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6924A4D1AF0045C5EA /* GUI_Swipe 01 1.wav */; };
+		FF7EEA7224A4D1AF0045C5EA /* GUI_Select_30 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6A24A4D1AF0045C5EA /* GUI_Select_30 1.wav */; };
+		FF7EEA7324A4D1AF0045C5EA /* GUI_Swipe 14 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6B24A4D1AF0045C5EA /* GUI_Swipe 14 1.wav */; };
+		FF7EEA7424A4D1AF0045C5EA /* GUI_Notification 02 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6C24A4D1AF0045C5EA /* GUI_Notification 02 1.wav */; };
+		FF7EEA7524A4D1AF0045C5EA /* GUI_Transition 13.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */; };
+		FF7EEA7624A4D1AF0045C5EA /* GUI_Transition 12.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */; };
+		FF7EEA7724A4D1AF0045C5EA /* GUI_Swipe 15 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */; };
 		FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440432497BC1400C97FC7 /* rain4.mp3 */; };
 		FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440442497BC1500C97FC7 /* rain1.mp3 */; };
 		FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440452497BC1500C97FC7 /* rain2.mp3 */; };
@@ -105,7 +152,54 @@
 		FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mission.mp3; sourceTree = "<group>"; };
 		FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
 		FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theInvestigation.mp3; sourceTree = "<group>"; };
-		FFD440412497BBC200C97FC7 /* steps1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps1.mp3; sourceTree = "<group>"; };
+		FF7EEA1124A4D1780045C5EA /* Closing door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Closing door 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1224A4D1780045C5EA /* Lock and unlock door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lock and unlock door 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1324A4D1780045C5EA /* Opening door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Opening door 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1424A4D1780045C5EA /* Open and closing 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Open and closing 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1524A4D1780045C5EA /* Knocking on door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Knocking on door 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1624A4D1780045C5EA /* Elevator open and close 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elevator open and close 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA1724A4D1780045C5EA /* Elevator open and close 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elevator open and close 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA1824A4D1790045C5EA /* Chainlock 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chainlock 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2224A4D1860045C5EA /* Falling stones 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Falling stones 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2324A4D1860045C5EA /* Stone crash 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stone crash 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA2424A4D1860045C5EA /* Stone crash 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stone crash 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2924A4D18F0045C5EA /* Wind with shutter banging 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wind with shutter banging 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2A24A4D18F0045C5EA /* Heavy wind 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Heavy wind 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2B24A4D18F0045C5EA /* Heavy and howling wind 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Heavy and howling wind 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2C24A4D18F0045C5EA /* Strong wind with rain 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Strong wind with rain 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2D24A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Heavy and blizzard wind 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA2E24A4D18F0045C5EA /* Wind blowing through trees 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wind blowing through trees 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA3624A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Thunder rumble with light rain 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA3724A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Thunder rumble with light rain 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA3824A4D1940045C5EA /* Close thunder with rain 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Close thunder with rain 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA3924A4D1940045C5EA /* Loud thunder crap 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Loud thunder crap 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA3A24A4D1940045C5EA /* Loud thunder crap 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Loud thunder crap 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA4124A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Noisy quick walk through leaves.mp3"; sourceTree = "<group>"; };
+		FF7EEA4224A4D19A0045C5EA /* Steps on hollow room 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps on hollow room 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA4324A4D19A0045C5EA /* Steps on hollow room 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps on hollow room 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA4424A4D19A0045C5EA /* Messy steps through leaves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Messy steps through leaves.mp3"; sourceTree = "<group>"; };
+		FF7EEA4524A4D19A0045C5EA /* Steps through leaves 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps through leaves 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA4624A4D19A0045C5EA /* Steps on forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps on forest.mp3"; sourceTree = "<group>"; };
+		FF7EEA4724A4D19A0045C5EA /* Steps climbing stairs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps climbing stairs.mp3"; sourceTree = "<group>"; };
+		FF7EEA4824A4D19A0045C5EA /* Steps on wood floor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Steps on wood floor.mp3"; sourceTree = "<group>"; };
+		FF7EEA5224A4D1A20045C5EA /* Stream 03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 03.mp3"; sourceTree = "<group>"; };
+		FF7EEA5324A4D1A20045C5EA /* Stream 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 02.mp3"; sourceTree = "<group>"; };
+		FF7EEA5424A4D1A20045C5EA /* Stream 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA5524A4D1A20045C5EA /* Stream 05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 05.mp3"; sourceTree = "<group>"; };
+		FF7EEA5624A4D1A20045C5EA /* Stream 04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 04.mp3"; sourceTree = "<group>"; };
+		FF7EEA5724A4D1A20045C5EA /* Stream 06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stream 06.mp3"; sourceTree = "<group>"; };
+		FF7EEA5F24A4D1A90045C5EA /* Dragon hoar 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dragon hoar 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA6024A4D1A90045C5EA /* Monster growl 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Monster growl 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA6124A4D1A90045C5EA /* Monster chewing bones 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Monster chewing bones 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA6224A4D1A90045C5EA /* Monster roar 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Monster roar 01.mp3"; sourceTree = "<group>"; };
+		FF7EEA6824A4D1AF0045C5EA /* GUI_Select_11 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Select_11 1.wav"; sourceTree = "<group>"; };
+		FF7EEA6924A4D1AF0045C5EA /* GUI_Swipe 01 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Swipe 01 1.wav"; sourceTree = "<group>"; };
+		FF7EEA6A24A4D1AF0045C5EA /* GUI_Select_30 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Select_30 1.wav"; sourceTree = "<group>"; };
+		FF7EEA6B24A4D1AF0045C5EA /* GUI_Swipe 14 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Swipe 14 1.wav"; sourceTree = "<group>"; };
+		FF7EEA6C24A4D1AF0045C5EA /* GUI_Notification 02 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Notification 02 1.wav"; sourceTree = "<group>"; };
+		FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 13.wav"; sourceTree = "<group>"; };
+		FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 12.wav"; sourceTree = "<group>"; };
+		FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Swipe 15 1.wav"; sourceTree = "<group>"; };
 		FFD440432497BC1400C97FC7 /* rain4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain4.mp3; sourceTree = "<group>"; };
 		FFD440442497BC1500C97FC7 /* rain1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain1.mp3; sourceTree = "<group>"; };
 		FFD440452497BC1500C97FC7 /* rain2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain2.mp3; sourceTree = "<group>"; };
@@ -293,17 +387,152 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		FFD440402497BBA100C97FC7 /* Audios */ = {
+		FF7EEA1024A4D1780045C5EA /* Door */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */,
-				FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */,
-				FEFA4BCB24A0EFCA009B3059 /* missionpassed.mp3 */,
+				FF7EEA1124A4D1780045C5EA /* Closing door 01.mp3 */,
+				FF7EEA1224A4D1780045C5EA /* Lock and unlock door 01.mp3 */,
+				FF7EEA1324A4D1780045C5EA /* Opening door 01.mp3 */,
+				FF7EEA1424A4D1780045C5EA /* Open and closing 01.mp3 */,
+				FF7EEA1524A4D1780045C5EA /* Knocking on door 01.mp3 */,
+				FF7EEA1624A4D1780045C5EA /* Elevator open and close 02.mp3 */,
+				FF7EEA1724A4D1780045C5EA /* Elevator open and close 01.mp3 */,
+				FF7EEA1824A4D1790045C5EA /* Chainlock 01.mp3 */,
+			);
+			path = Door;
+			sourceTree = "<group>";
+		};
+		FF7EEA2124A4D1860045C5EA /* Falling stones */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA2224A4D1860045C5EA /* Falling stones 01.mp3 */,
+				FF7EEA2324A4D1860045C5EA /* Stone crash 02.mp3 */,
+				FF7EEA2424A4D1860045C5EA /* Stone crash 01.mp3 */,
+			);
+			path = "Falling stones";
+			sourceTree = "<group>";
+		};
+		FF7EEA2824A4D18F0045C5EA /* Wind */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA2924A4D18F0045C5EA /* Wind with shutter banging 01.mp3 */,
+				FF7EEA2A24A4D18F0045C5EA /* Heavy wind 01.mp3 */,
+				FF7EEA2B24A4D18F0045C5EA /* Heavy and howling wind 01.mp3 */,
+				FF7EEA2C24A4D18F0045C5EA /* Strong wind with rain 01.mp3 */,
+				FF7EEA2D24A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 */,
+				FF7EEA2E24A4D18F0045C5EA /* Wind blowing through trees 01.mp3 */,
+			);
+			path = Wind;
+			sourceTree = "<group>";
+		};
+		FF7EEA3524A4D1940045C5EA /* Thunder */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA3624A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 */,
+				FF7EEA3724A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 */,
+				FF7EEA3824A4D1940045C5EA /* Close thunder with rain 01.mp3 */,
+				FF7EEA3924A4D1940045C5EA /* Loud thunder crap 01.mp3 */,
+				FF7EEA3A24A4D1940045C5EA /* Loud thunder crap 02.mp3 */,
+			);
+			path = Thunder;
+			sourceTree = "<group>";
+		};
+		FF7EEA4024A4D19A0045C5EA /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA4124A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 */,
+				FF7EEA4224A4D19A0045C5EA /* Steps on hollow room 01.mp3 */,
+				FF7EEA4324A4D19A0045C5EA /* Steps on hollow room 02.mp3 */,
+				FF7EEA4424A4D19A0045C5EA /* Messy steps through leaves.mp3 */,
+				FF7EEA4524A4D19A0045C5EA /* Steps through leaves 01.mp3 */,
+				FF7EEA4624A4D19A0045C5EA /* Steps on forest.mp3 */,
+				FF7EEA4724A4D19A0045C5EA /* Steps climbing stairs.mp3 */,
+				FF7EEA4824A4D19A0045C5EA /* Steps on wood floor.mp3 */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		FF7EEA5124A4D1A20045C5EA /* River */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA5224A4D1A20045C5EA /* Stream 03.mp3 */,
+				FF7EEA5324A4D1A20045C5EA /* Stream 02.mp3 */,
+				FF7EEA5424A4D1A20045C5EA /* Stream 01.mp3 */,
+				FF7EEA5524A4D1A20045C5EA /* Stream 05.mp3 */,
+				FF7EEA5624A4D1A20045C5EA /* Stream 04.mp3 */,
+				FF7EEA5724A4D1A20045C5EA /* Stream 06.mp3 */,
+			);
+			path = River;
+			sourceTree = "<group>";
+		};
+		FF7EEA5E24A4D1A90045C5EA /* Monster */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA5F24A4D1A90045C5EA /* Dragon hoar 01.mp3 */,
+				FF7EEA6024A4D1A90045C5EA /* Monster growl 01.mp3 */,
+				FF7EEA6124A4D1A90045C5EA /* Monster chewing bones 01.mp3 */,
+				FF7EEA6224A4D1A90045C5EA /* Monster roar 01.mp3 */,
+			);
+			path = Monster;
+			sourceTree = "<group>";
+		};
+		FF7EEA6724A4D1AF0045C5EA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA6824A4D1AF0045C5EA /* GUI_Select_11 1.wav */,
+				FF7EEA6924A4D1AF0045C5EA /* GUI_Swipe 01 1.wav */,
+				FF7EEA6A24A4D1AF0045C5EA /* GUI_Select_30 1.wav */,
+				FF7EEA6B24A4D1AF0045C5EA /* GUI_Swipe 14 1.wav */,
+				FF7EEA6C24A4D1AF0045C5EA /* GUI_Notification 02 1.wav */,
+				FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */,
+				FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */,
+				FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FF7EEA7824A4D1CE0045C5EA /* Rain */ = {
+			isa = PBXGroup;
+			children = (
 				FFD440442497BC1500C97FC7 /* rain1.mp3 */,
 				FFD440452497BC1500C97FC7 /* rain2.mp3 */,
 				FFD440462497BC1600C97FC7 /* rain3.mp3 */,
 				FFD440432497BC1400C97FC7 /* rain4.mp3 */,
-				FFD440412497BBC200C97FC7 /* steps1.mp3 */,
+			);
+			path = Rain;
+			sourceTree = "<group>";
+		};
+		FF7EEA7924A4D2410045C5EA /* SpecialFx */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA1024A4D1780045C5EA /* Door */,
+				FF7EEA2124A4D1860045C5EA /* Falling stones */,
+				FF7EEA5E24A4D1A90045C5EA /* Monster */,
+				FF7EEA4024A4D19A0045C5EA /* Steps */,
+				FF7EEA3524A4D1940045C5EA /* Thunder */,
+			);
+			path = SpecialFx;
+			sourceTree = "<group>";
+		};
+		FF7EEA7A24A4D2590045C5EA /* Loop */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA7824A4D1CE0045C5EA /* Rain */,
+				FF7EEA5124A4D1A20045C5EA /* River */,
+				FF7EEA2824A4D18F0045C5EA /* Wind */,
+			);
+			path = Loop;
+			sourceTree = "<group>";
+		};
+		FFD440402497BBA100C97FC7 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EEA7924A4D2410045C5EA /* SpecialFx */,
+				FF7EEA6724A4D1AF0045C5EA /* Helper */,
+				FF7EEA7A24A4D2590045C5EA /* Loop */,
+				FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */,
+				FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */,
+				FEFA4BCB24A0EFCA009B3059 /* missionpassed.mp3 */,
 				FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */,
 			);
 			path = Audios;
@@ -413,19 +642,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7EEA4C24A4D19A0045C5EA /* Messy steps through leaves.mp3 in Resources */,
+				FF7EEA3D24A4D1940045C5EA /* Close thunder with rain 01.mp3 in Resources */,
+				FF7EEA3424A4D18F0045C5EA /* Wind blowing through trees 01.mp3 in Resources */,
 				FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */,
+				FF7EEA1924A4D1790045C5EA /* Closing door 01.mp3 in Resources */,
+				FF7EEA5024A4D19A0045C5EA /* Steps on wood floor.mp3 in Resources */,
 				FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */,
-				FFD440422497BBC200C97FC7 /* steps1.mp3 in Resources */,
+				FF7EEA7524A4D1AF0045C5EA /* GUI_Transition 13.wav in Resources */,
+				FF7EEA3C24A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 in Resources */,
+				FF7EEA7124A4D1AF0045C5EA /* GUI_Swipe 01 1.wav in Resources */,
+				FF7EEA3B24A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 in Resources */,
+				FF7EEA7324A4D1AF0045C5EA /* GUI_Swipe 14 1.wav in Resources */,
+				FF7EEA3224A4D18F0045C5EA /* Strong wind with rain 01.mp3 in Resources */,
+				FF7EEA4D24A4D19A0045C5EA /* Steps through leaves 01.mp3 in Resources */,
 				FEFA4BCF24A0EFCB009B3059 /* mission.mp3 in Resources */,
+				FF7EEA3124A4D18F0045C5EA /* Heavy and howling wind 01.mp3 in Resources */,
+				FF7EEA2524A4D1870045C5EA /* Falling stones 01.mp3 in Resources */,
 				FEE853B524868F290063B3F6 /* LaunchScreen.storyboard in Resources */,
+				FF7EEA4F24A4D19A0045C5EA /* Steps climbing stairs.mp3 in Resources */,
+				FF7EEA7024A4D1AF0045C5EA /* GUI_Select_11 1.wav in Resources */,
+				FF7EEA1F24A4D1790045C5EA /* Elevator open and close 01.mp3 in Resources */,
+				FF7EEA1B24A4D1790045C5EA /* Opening door 01.mp3 in Resources */,
+				FF7EEA2024A4D1790045C5EA /* Chainlock 01.mp3 in Resources */,
+				FF7EEA7224A4D1AF0045C5EA /* GUI_Select_30 1.wav in Resources */,
+				FF7EEA4924A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 in Resources */,
+				FF7EEA6424A4D1A90045C5EA /* Monster growl 01.mp3 in Resources */,
+				FF7EEA1E24A4D1790045C5EA /* Elevator open and close 02.mp3 in Resources */,
+				FF7EEA2724A4D1870045C5EA /* Stone crash 01.mp3 in Resources */,
 				FEFA4BD024A0EFCB009B3059 /* coin.mp3 in Resources */,
+				FF7EEA7424A4D1AF0045C5EA /* GUI_Notification 02 1.wav in Resources */,
 				FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */,
+				FF7EEA5924A4D1A20045C5EA /* Stream 02.mp3 in Resources */,
+				FF7EEA2F24A4D18F0045C5EA /* Wind with shutter banging 01.mp3 in Resources */,
+				FF7EEA3024A4D18F0045C5EA /* Heavy wind 01.mp3 in Resources */,
+				FF7EEA5B24A4D1A20045C5EA /* Stream 05.mp3 in Resources */,
+				FF7EEA4E24A4D19A0045C5EA /* Steps on forest.mp3 in Resources */,
 				FE6B3426249CEEE400D15C62 /* chapter1.json in Resources */,
+				FF7EEA4A24A4D19A0045C5EA /* Steps on hollow room 01.mp3 in Resources */,
 				FEFA4BCE24A0EFCB009B3059 /* missionpassed.mp3 in Resources */,
+				FF7EEA1D24A4D1790045C5EA /* Knocking on door 01.mp3 in Resources */,
 				FEE853B224868F290063B3F6 /* Assets.xcassets in Resources */,
 				FFD4404A2497BC1700C97FC7 /* rain3.mp3 in Resources */,
 				6E486D95249B9B80006BB075 /* chapter0.json in Resources */,
+				FF7EEA2624A4D1870045C5EA /* Stone crash 02.mp3 in Resources */,
+				FF7EEA6324A4D1A90045C5EA /* Dragon hoar 01.mp3 in Resources */,
+				FF7EEA3324A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 in Resources */,
+				FF7EEA5D24A4D1A20045C5EA /* Stream 06.mp3 in Resources */,
+				FF7EEA3F24A4D1940045C5EA /* Loud thunder crap 02.mp3 in Resources */,
+				FF7EEA4B24A4D19A0045C5EA /* Steps on hollow room 02.mp3 in Resources */,
 				FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */,
+				FF7EEA1A24A4D1790045C5EA /* Lock and unlock door 01.mp3 in Resources */,
+				FF7EEA7724A4D1AF0045C5EA /* GUI_Swipe 15 1.wav in Resources */,
+				FF7EEA5C24A4D1A20045C5EA /* Stream 04.mp3 in Resources */,
+				FF7EEA1C24A4D1790045C5EA /* Open and closing 01.mp3 in Resources */,
+				FF7EEA5824A4D1A20045C5EA /* Stream 03.mp3 in Resources */,
+				FF7EEA6624A4D1A90045C5EA /* Monster roar 01.mp3 in Resources */,
+				FF7EEA5A24A4D1A20045C5EA /* Stream 01.mp3 in Resources */,
+				FF7EEA3E24A4D1940045C5EA /* Loud thunder crap 01.mp3 in Resources */,
+				FF7EEA6524A4D1A90045C5EA /* Monster chewing bones 01.mp3 in Resources */,
+				FF7EEA7624A4D1AF0045C5EA /* GUI_Transition 12.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
