@@ -89,6 +89,7 @@
 		FF7EEA7524A4D1AF0045C5EA /* GUI_Transition 13.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */; };
 		FF7EEA7624A4D1AF0045C5EA /* GUI_Transition 12.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */; };
 		FF7EEA7724A4D1AF0045C5EA /* GUI_Swipe 15 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */; };
+		FFA6C5B024A91E4C009FFF86 /* CAP01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */; };
 		FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440432497BC1400C97FC7 /* rain4.mp3 */; };
 		FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440442497BC1500C97FC7 /* rain1.mp3 */; };
 		FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440452497BC1500C97FC7 /* rain2.mp3 */; };
@@ -202,6 +203,7 @@
 		FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 13.wav"; sourceTree = "<group>"; };
 		FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 12.wav"; sourceTree = "<group>"; };
 		FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Swipe 15 1.wav"; sourceTree = "<group>"; };
+		FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CAP01.mp3; sourceTree = "<group>"; };
 		FFD440432497BC1400C97FC7 /* rain4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain4.mp3; sourceTree = "<group>"; };
 		FFD440442497BC1500C97FC7 /* rain1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain1.mp3; sourceTree = "<group>"; };
 		FFD440452497BC1500C97FC7 /* rain2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain2.mp3; sourceTree = "<group>"; };
@@ -535,9 +537,18 @@
 			path = Loop;
 			sourceTree = "<group>";
 		};
+		FFA6C5AE24A91E35009FFF86 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		FFD440402497BBA100C97FC7 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				FFA6C5AE24A91E35009FFF86 /* Scenes */,
 				FF7EEA7924A4D2410045C5EA /* SpecialFx */,
 				FF7EEA6724A4D1AF0045C5EA /* Helper */,
 				FF7EEA7A24A4D2590045C5EA /* Loop */,
@@ -701,6 +712,7 @@
 				FF7EEA6324A4D1A90045C5EA /* Dragon hoar 01.mp3 in Resources */,
 				FF7EEA3324A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 in Resources */,
 				FF7EEA5D24A4D1A20045C5EA /* Stream 06.mp3 in Resources */,
+				FFA6C5B024A91E4C009FFF86 /* CAP01.mp3 in Resources */,
 				FF7EEA3F24A4D1940045C5EA /* Loud thunder crap 02.mp3 in Resources */,
 				FF7EEA4B24A4D19A0045C5EA /* Steps on hollow room 02.mp3 in Resources */,
 				FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */,
