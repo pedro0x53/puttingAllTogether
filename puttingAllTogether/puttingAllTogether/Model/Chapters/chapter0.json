@@ -3,40 +3,22 @@
     "scenes": [
         {
             "sceneID": 0,
-            "audioURL": "mission",
+            "audioURL": "CAP0",
             "hasSFX": true,
             "sfx": [
                 {
-                    "audioURL": "coin",
+                    "audioURL": "stream_away",
                     "channel": "right",
                 },
                 {
-                    "audioURL": "coin",
-                    "channel": "left",
+                    "audioURL": "thought1",
+                    "channel": "booth",
                 }
             ],
-            "hasGestures": true,
-            "gestures": ["left", "right"],
-            "nextSceneIncrementer": [1, 2]
-        },
-        {
-            "sceneID": 1,
-            "audioURL": "mission",
-            "hasSFX": false,
-            "sfx": [],
             "hasGestures": false,
             "gestures": [],
-            "nextSceneIncrementer": []
-        },
-        {
-            "sceneID": 2,
-            "audioURL": "missionpassed",
-            "hasSFX": false,
-            "sfx": [],
-            "hasGestures": false,
-            "gestures": [],
-            "nextSceneIncrementer": []
+            "nextSceneIncrementer": [1]
         }
     ],
-    "lastChapter": false
+    "lastChapter": true
 }

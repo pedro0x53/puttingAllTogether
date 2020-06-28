@@ -41,13 +41,15 @@ class InitialController: UIViewController {
             WeatherData.shared.setDefaultData()
 //            WeatherData.shared.printTest()
         }
-        audioManager.play(player: .loop, urlString: "theInvestigation")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        audioManager.play(player: .loop, urlString: "theInvestigation")
     }
 }
 

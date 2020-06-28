@@ -31,7 +31,10 @@ class ChapterSceneManager{
             let chapterId = ud.integer(forKey: "chapterId")
             let sceneId = ud.integer(forKey: "sceneId")
             
-            currentChapter = getChapter(id: chapterId)
+            guard let chapter = getChapter(id: chapterId) else {
+                fatalError("Unable to find chapter with id \(chapterId)")
+            }
+            currentChapter = chapter
             
             if sceneId > currentChapter.scenes.count - 1 {
                 currentScene = currentChapter.scenes[0]

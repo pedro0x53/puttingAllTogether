@@ -24,8 +24,11 @@
 		FE45895C249A8E9A007C7F55 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE45895B249A8E9A007C7F55 /* MenuManager.swift */; };
 		FE5552E62487D5690096BF0A /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5552E52487D5690096BF0A /* Initial.swift */; };
 		FE5E914E2487D3F3001FCE8A /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5E914D2487D3F3001FCE8A /* Gameplay.swift */; };
-		FE6B3426249CEEE400D15C62 /* chapter1.json in Resources */ = {isa = PBXBuildFile; fileRef = FE6B3425249CEEE400D15C62 /* chapter1.json */; };
 		FE6CD73624869FC30064CAEC /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CD73524869FC30064CAEC /* GameplayController.swift */; };
+		FE83FEC824A93232007B315F /* CAP0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE83FEC724A93232007B315F /* CAP0.mp3 */; };
+		FE83FECA24A93282007B315F /* cave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE83FEC924A93282007B315F /* cave.mp3 */; };
+		FE83FECD24A93649007B315F /* stream_away.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE83FECC24A93649007B315F /* stream_away.mp3 */; };
+		FE83FED024A93683007B315F /* thought1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE83FECF24A93683007B315F /* thought1.mp3 */; };
 		FED26EDF2498EB0E0005D848 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED26EDE2498EB0E0005D848 /* Menu.swift */; };
 		FED26EE12498EB240005D848 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED26EE02498EB240005D848 /* MenuCell.swift */; };
 		FEE853A624868F260063B3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853A524868F260063B3F6 /* AppDelegate.swift */; };
@@ -37,9 +40,6 @@
 		FEE853DD24868FAA0063B3F6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853DC24868FAA0063B3F6 /* Config.swift */; };
 		FEE853E0248690760063B3F6 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853DF248690760063B3F6 /* InitialController.swift */; };
 		FEE853E7248692BA0063B3F6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE853E6248692BA0063B3F6 /* Colors.swift */; };
-		FEFA4BCE24A0EFCB009B3059 /* missionpassed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFA4BCB24A0EFCA009B3059 /* missionpassed.mp3 */; };
-		FEFA4BCF24A0EFCB009B3059 /* mission.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */; };
-		FEFA4BD024A0EFCB009B3059 /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */; };
 		FF1D73AC249AB2AC00C83C4B /* theInvestigation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */; };
 		FF7EEA1924A4D1790045C5EA /* Closing door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1124A4D1780045C5EA /* Closing door 01.mp3 */; };
 		FF7EEA1A24A4D1790045C5EA /* Lock and unlock door 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA1224A4D1780045C5EA /* Lock and unlock door 01.mp3 */; };
@@ -89,7 +89,7 @@
 		FF7EEA7524A4D1AF0045C5EA /* GUI_Transition 13.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */; };
 		FF7EEA7624A4D1AF0045C5EA /* GUI_Transition 12.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */; };
 		FF7EEA7724A4D1AF0045C5EA /* GUI_Swipe 15 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */; };
-		FFA6C5B024A91E4C009FFF86 /* CAP01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */; };
+		FFA6C5B024A91E4C009FFF86 /* CAP1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C5AF24A91E4C009FFF86 /* CAP1.mp3 */; };
 		FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440432497BC1400C97FC7 /* rain4.mp3 */; };
 		FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440442497BC1500C97FC7 /* rain1.mp3 */; };
 		FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFD440452497BC1500C97FC7 /* rain2.mp3 */; };
@@ -132,8 +132,11 @@
 		FE45895B249A8E9A007C7F55 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		FE5552E52487D5690096BF0A /* Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initial.swift; sourceTree = "<group>"; };
 		FE5E914D2487D3F3001FCE8A /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
-		FE6B3425249CEEE400D15C62 /* chapter1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chapter1.json; sourceTree = "<group>"; };
 		FE6CD73524869FC30064CAEC /* GameplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
+		FE83FEC724A93232007B315F /* CAP0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CAP0.mp3; sourceTree = "<group>"; };
+		FE83FEC924A93282007B315F /* cave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cave.mp3; sourceTree = "<group>"; };
+		FE83FECC24A93649007B315F /* stream_away.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stream_away.mp3; sourceTree = "<group>"; };
+		FE83FECF24A93683007B315F /* thought1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thought1.mp3; sourceTree = "<group>"; };
 		FED26EDE2498EB0E0005D848 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FED26EE02498EB240005D848 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FEE853A224868F260063B3F6 /* puttingAllTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = puttingAllTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,9 +154,6 @@
 		FEE853DC24868FAA0063B3F6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FEE853DF248690760063B3F6 /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
 		FEE853E6248692BA0063B3F6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		FEFA4BCB24A0EFCA009B3059 /* missionpassed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missionpassed.mp3; sourceTree = "<group>"; };
-		FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mission.mp3; sourceTree = "<group>"; };
-		FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
 		FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theInvestigation.mp3; sourceTree = "<group>"; };
 		FF7EEA1124A4D1780045C5EA /* Closing door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Closing door 01.mp3"; sourceTree = "<group>"; };
 		FF7EEA1224A4D1780045C5EA /* Lock and unlock door 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lock and unlock door 01.mp3"; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		FF7EEA6D24A4D1AF0045C5EA /* GUI_Transition 13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 13.wav"; sourceTree = "<group>"; };
 		FF7EEA6E24A4D1AF0045C5EA /* GUI_Transition 12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Transition 12.wav"; sourceTree = "<group>"; };
 		FF7EEA6F24A4D1AF0045C5EA /* GUI_Swipe 15 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "GUI_Swipe 15 1.wav"; sourceTree = "<group>"; };
-		FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CAP01.mp3; sourceTree = "<group>"; };
+		FFA6C5AF24A91E4C009FFF86 /* CAP1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CAP1.mp3; sourceTree = "<group>"; };
 		FFD440432497BC1400C97FC7 /* rain4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain4.mp3; sourceTree = "<group>"; };
 		FFD440442497BC1500C97FC7 /* rain1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain1.mp3; sourceTree = "<group>"; };
 		FFD440452497BC1500C97FC7 /* rain2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain2.mp3; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				6E486D94249B9B80006BB075 /* chapter0.json */,
-				FE6B3425249CEEE400D15C62 /* chapter1.json */,
 			);
 			path = Chapters;
 			sourceTree = "<group>";
@@ -262,6 +261,30 @@
 				FE45895B249A8E9A007C7F55 /* MenuManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		FE83FECB24A934A3007B315F /* Cave */ = {
+			isa = PBXGroup;
+			children = (
+				FE83FEC924A93282007B315F /* cave.mp3 */,
+			);
+			path = Cave;
+			sourceTree = "<group>";
+		};
+		FE83FECE24A93652007B315F /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				FE83FECC24A93649007B315F /* stream_away.mp3 */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		FE83FED124A93689007B315F /* Thought */ = {
+			isa = PBXGroup;
+			children = (
+				FE83FECF24A93683007B315F /* thought1.mp3 */,
+			);
+			path = Thought;
 			sourceTree = "<group>";
 		};
 		FED26EDD2498EAF60005D848 /* Menu */ = {
@@ -518,6 +541,8 @@
 		FF7EEA7924A4D2410045C5EA /* SpecialFx */ = {
 			isa = PBXGroup;
 			children = (
+				FE83FED124A93689007B315F /* Thought */,
+				FE83FECE24A93652007B315F /* Stream */,
 				FF7EEA1024A4D1780045C5EA /* Door */,
 				FF7EEA2124A4D1860045C5EA /* Falling stones */,
 				FF7EEA5E24A4D1A90045C5EA /* Monster */,
@@ -530,6 +555,7 @@
 		FF7EEA7A24A4D2590045C5EA /* Loop */ = {
 			isa = PBXGroup;
 			children = (
+				FE83FECB24A934A3007B315F /* Cave */,
 				FF7EEA7824A4D1CE0045C5EA /* Rain */,
 				FF7EEA5124A4D1A20045C5EA /* River */,
 				FF7EEA2824A4D18F0045C5EA /* Wind */,
@@ -540,7 +566,8 @@
 		FFA6C5AE24A91E35009FFF86 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FFA6C5AF24A91E4C009FFF86 /* CAP01.mp3 */,
+				FE83FEC724A93232007B315F /* CAP0.mp3 */,
+				FFA6C5AF24A91E4C009FFF86 /* CAP1.mp3 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -552,9 +579,6 @@
 				FF7EEA7924A4D2410045C5EA /* SpecialFx */,
 				FF7EEA6724A4D1AF0045C5EA /* Helper */,
 				FF7EEA7A24A4D2590045C5EA /* Loop */,
-				FEFA4BCD24A0EFCA009B3059 /* coin.mp3 */,
-				FEFA4BCC24A0EFCA009B3059 /* mission.mp3 */,
-				FEFA4BCB24A0EFCA009B3059 /* missionpassed.mp3 */,
 				FF1D73AB249AB2AB00C83C4B /* theInvestigation.mp3 */,
 			);
 			path = Audios;
@@ -673,13 +697,14 @@
 				FF7EEA5024A4D19A0045C5EA /* Steps on wood floor.mp3 in Resources */,
 				FFD440482497BC1700C97FC7 /* rain1.mp3 in Resources */,
 				FF7EEA7524A4D1AF0045C5EA /* GUI_Transition 13.wav in Resources */,
+				FE83FECD24A93649007B315F /* stream_away.mp3 in Resources */,
 				FF7EEA3C24A4D1940045C5EA /* Thunder rumble with light rain 02.mp3 in Resources */,
 				FF7EEA7124A4D1AF0045C5EA /* GUI_Swipe 01 1.wav in Resources */,
+				FE83FECA24A93282007B315F /* cave.mp3 in Resources */,
 				FF7EEA3B24A4D1940045C5EA /* Thunder rumble with light rain 01.mp3 in Resources */,
 				FF7EEA7324A4D1AF0045C5EA /* GUI_Swipe 14 1.wav in Resources */,
 				FF7EEA3224A4D18F0045C5EA /* Strong wind with rain 01.mp3 in Resources */,
 				FF7EEA4D24A4D19A0045C5EA /* Steps through leaves 01.mp3 in Resources */,
-				FEFA4BCF24A0EFCB009B3059 /* mission.mp3 in Resources */,
 				FF7EEA3124A4D18F0045C5EA /* Heavy and howling wind 01.mp3 in Resources */,
 				FF7EEA2524A4D1870045C5EA /* Falling stones 01.mp3 in Resources */,
 				FEE853B524868F290063B3F6 /* LaunchScreen.storyboard in Resources */,
@@ -687,13 +712,13 @@
 				FF7EEA7024A4D1AF0045C5EA /* GUI_Select_11 1.wav in Resources */,
 				FF7EEA1F24A4D1790045C5EA /* Elevator open and close 01.mp3 in Resources */,
 				FF7EEA1B24A4D1790045C5EA /* Opening door 01.mp3 in Resources */,
+				FE83FED024A93683007B315F /* thought1.mp3 in Resources */,
 				FF7EEA2024A4D1790045C5EA /* Chainlock 01.mp3 in Resources */,
 				FF7EEA7224A4D1AF0045C5EA /* GUI_Select_30 1.wav in Resources */,
 				FF7EEA4924A4D19A0045C5EA /* Noisy quick walk through leaves.mp3 in Resources */,
 				FF7EEA6424A4D1A90045C5EA /* Monster growl 01.mp3 in Resources */,
 				FF7EEA1E24A4D1790045C5EA /* Elevator open and close 02.mp3 in Resources */,
 				FF7EEA2724A4D1870045C5EA /* Stone crash 01.mp3 in Resources */,
-				FEFA4BD024A0EFCB009B3059 /* coin.mp3 in Resources */,
 				FF7EEA7424A4D1AF0045C5EA /* GUI_Notification 02 1.wav in Resources */,
 				FFD440492497BC1700C97FC7 /* rain2.mp3 in Resources */,
 				FF7EEA5924A4D1A20045C5EA /* Stream 02.mp3 in Resources */,
@@ -701,9 +726,8 @@
 				FF7EEA3024A4D18F0045C5EA /* Heavy wind 01.mp3 in Resources */,
 				FF7EEA5B24A4D1A20045C5EA /* Stream 05.mp3 in Resources */,
 				FF7EEA4E24A4D19A0045C5EA /* Steps on forest.mp3 in Resources */,
-				FE6B3426249CEEE400D15C62 /* chapter1.json in Resources */,
 				FF7EEA4A24A4D19A0045C5EA /* Steps on hollow room 01.mp3 in Resources */,
-				FEFA4BCE24A0EFCB009B3059 /* missionpassed.mp3 in Resources */,
+				FE83FEC824A93232007B315F /* CAP0.mp3 in Resources */,
 				FF7EEA1D24A4D1790045C5EA /* Knocking on door 01.mp3 in Resources */,
 				FEE853B224868F290063B3F6 /* Assets.xcassets in Resources */,
 				FFD4404A2497BC1700C97FC7 /* rain3.mp3 in Resources */,
@@ -712,7 +736,7 @@
 				FF7EEA6324A4D1A90045C5EA /* Dragon hoar 01.mp3 in Resources */,
 				FF7EEA3324A4D18F0045C5EA /* Heavy and blizzard wind 01.mp3 in Resources */,
 				FF7EEA5D24A4D1A20045C5EA /* Stream 06.mp3 in Resources */,
-				FFA6C5B024A91E4C009FFF86 /* CAP01.mp3 in Resources */,
+				FFA6C5B024A91E4C009FFF86 /* CAP1.mp3 in Resources */,
 				FF7EEA3F24A4D1940045C5EA /* Loud thunder crap 02.mp3 in Resources */,
 				FF7EEA4B24A4D19A0045C5EA /* Steps on hollow room 02.mp3 in Resources */,
 				FFD440472497BC1700C97FC7 /* rain4.mp3 in Resources */,

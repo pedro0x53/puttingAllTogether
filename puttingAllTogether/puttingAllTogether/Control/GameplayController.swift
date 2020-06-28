@@ -45,8 +45,8 @@ class GameplayController: UIViewController {
         super.viewDidLoad()
         
 //        Uncomment these lines to reset the User Deafaults save
-//        UserDefaults.standard.set(0, forKey: "chapterId")
-//        UserDefaults.standard.set(0, forKey: "sceneId")
+        UserDefaults.standard.set(0, forKey: "chapterId")
+        UserDefaults.standard.set(0, forKey: "sceneId")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +55,7 @@ class GameplayController: UIViewController {
         audioManager.delegate = self
         
         if(state == false) {
+            audioManager.play(player: .loop, urlString: "cave")
             tell(scene: chapterManager.currentScene)
         }
         
